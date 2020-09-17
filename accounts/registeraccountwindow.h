@@ -37,6 +37,9 @@ private:
 
     QCalendarWidget* dateSelector;
 
+public slots:
+    void registerAccount();
+
 };
 
 #endif // REGISTERACCOUNTWINDOW_H

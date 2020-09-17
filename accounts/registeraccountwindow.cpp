@@ -1,5 +1,7 @@
 #include "registeraccountwindow.h"
+#include <accounts/user.h>
 
+#include <iostream>
 
 registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
 
@@ -56,7 +58,37 @@ registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
     gridLayout->addWidget(dateSelector, 6, 1);
 
     submitButton = new QPushButton("Submit");
-    gridLayout->addWidget(submitButton, 7, 0, 2, 1);
+    gridLayout->addWidget(submitButton, 7, 0, 1, 2);
 
     setLayout(gridLayout);
+
+    QObject::connect(submitButton, SIGNAL(clicked(bool)), this, SLOT(registerAccount()));
+}
+
+void registerAccountWindow::registerAccount(){
+    if(passwordLineEdit->text() != retypePasswordLineEdit->text()){
+        // TODO: Post error message
+        return;
+    }
+    // TODO: Add sanity checks like gender selected, valid password, etc...
+
+    User user;
+    user.setFirstName(firstNameLineEdit->text());
+    user.setLastName(lastNameLineEdit->text());
+    user.setUsername(usernameLineEdit->text());
+    user.setPassword(passwordLineEdit->text());
+
+    int gender;
+    if(maleRadioButton->isChecked()) gender = 1;
+    if(femaleRadioButton->isChecked()) gender = 2;
+    user.setGender(gender);
+    user.setDateOfBirth(dateSelector->selectedDate());
+
+    int code = user.toJSON();
+    switch(code){
+        case 1:
+            std::cerr << "ERROR: Could not open JSON for write" << std::endl; // TODO: This is not appropriate
+            return;
+    }
+    close();
 }

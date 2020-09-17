@@ -12,7 +12,7 @@ int User::toJSON(){
 
     QJsonObject userJsonObject;
     userJsonObject["username"] = username;
-    userJsonObject["password"] = username;
+    userJsonObject["password"] = password;
     userJsonObject["firstName"] = firstName;
     userJsonObject["lastName"] = lastName;
     userJsonObject["pathToProfilePic"] = profilePicturePath;
@@ -26,19 +26,22 @@ int User::toJSON(){
     userJsonObject["dateOfBirth"] = dateOfBirthJsonObject;
 
     QJsonDocument document(userJsonObject);
+    QString filename = "../QamingFramework/accounts/user_data/" + username + ".json";
 
-    QFile userFile(username + ".json");
+    QFile userFile(filename);
     if(userFile.open(QIODevice::WriteOnly)){
         userFile.write(document.toJson());
+        userFile.close();
         return 0;
     }
     return 1;
 }
 
-int User::fromJSON(QString& username, QString &password){
-    QFile userFile(username + ".json");
+int User::fromJSON(QString username, QString password){
+    QFile userFile("../QamingFramework/accounts/user_data/" + username + ".json");
     if (userFile.open(QIODevice::ReadOnly)) {
         QByteArray data = userFile.readAll();
+        userFile.close();
         QJsonDocument loadDoc(QJsonDocument::fromJson(data));
         QJsonObject userJsonObject = loadDoc.object();
 
@@ -54,6 +57,7 @@ int User::fromJSON(QString& username, QString &password){
             dateOfBirth = QDate(dateOfBirthJsonObject["year"].toInt(),
                                 dateOfBirthJsonObject["month"].toInt(),
                                 dateOfBirthJsonObject["day"].toInt());
+            return 0;
         }
         return 2;
     }
@@ -88,27 +92,27 @@ int User::getGender(){
     return gender;
 }
 
-void User::setFirstName(QString &value){
+void User::setFirstName(QString value){
     firstName = value;
 }
 
-void User::setLastName(QString &value){
+void User::setLastName(QString value){
     lastName = value;
 }
 
-void User::setUsername(QString &value){
+void User::setUsername(QString value){
     username = value;
 }
 
-void User::setPassword(QString &value){
+void User::setPassword(QString value){
     password = value;
 }
 
-void User::setProfilePicturePath(QString &value){
+void User::setProfilePicturePath(QString value){
     profilePicturePath = value;
 }
 
-void User::setDateOfBirth(QDate &value){
+void User::setDateOfBirth(QDate value){
     dateOfBirth = value;
 }
 

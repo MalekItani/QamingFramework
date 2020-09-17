@@ -44,5 +44,6 @@ mainWindow::mainWindow(QWidget *parent) : QWidget(parent){
 }
 
 void mainWindow::openRegisterAccountForm(){
-
+    registerAccountWindow *window = new registerAccountWindow();
+    window->show();
 }

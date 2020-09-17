@@ -28,7 +28,7 @@ bool IsLatinName(string& name)
 {
     if (name.size() == 0)return false;
 
-    for (int i = 0; i < name.size(); i++)
+    for (int i = 0; i < (int) name.size(); i++)
     {
         if (!((name[i] >= 'a' && name[i] <= 'z') || (name[i] >= 'A' && name[i] <= 'Z') || name[i] == ' '))
         {

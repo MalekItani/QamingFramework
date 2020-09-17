@@ -15,15 +15,15 @@ public:
     QDate getDateOfBirth();
     int getGender();
 
-    void setFirstName(QString&);
-    void setLastName(QString&);
-    void setUsername(QString&);
-    void setPassword(QString&);
-    void setProfilePicturePath(QString&);
-    void setDateOfBirth(QDate&);
+    void setFirstName(QString);
+    void setLastName(QString);
+    void setUsername(QString);
+    void setPassword(QString);
+    void setProfilePicturePath(QString);
+    void setDateOfBirth(QDate);
     void setGender(int);
 
-    int fromJSON(QString&, QString&);
+    int fromJSON(QString, QString);
     int toJSON();
 
 private:
