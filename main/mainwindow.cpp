@@ -1,6 +1,6 @@
 #include "mainwindow.h"
-
-
+#include <accounts/registeraccountwindow.h>
+#include <iostream>
 mainWindow::mainWindow(QWidget *parent) : QWidget(parent){
 
     vLayout = new QVBoxLayout();
@@ -38,5 +38,11 @@ mainWindow::mainWindow(QWidget *parent) : QWidget(parent){
     vLayout->addWidget(creditsLabel);
 
     setLayout(vLayout);
+
+    QObject::connect(registerButton, SIGNAL(clicked(bool)), this, SLOT(openRegisterAccountForm()));
+
+}
+
+void mainWindow::openRegisterAccountForm(){
 
 }

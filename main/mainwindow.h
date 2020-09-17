@@ -19,6 +19,9 @@ private:
     QPushButton* registerButton;
     QPushButton* killCovidGameButton;
     QPushButton* reversiGameButton;
+
+public slots:
+    void openRegisterAccountForm();
 };
 
 #endif // MAINWINDOW_H
