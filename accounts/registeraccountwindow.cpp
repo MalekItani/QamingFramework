@@ -6,6 +6,8 @@
 
 registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
 
+    setWindowTitle("Create a New Account");
+
     gridLayout = new QGridLayout();
 
     firstNameLabel = new QLabel("First Name");
