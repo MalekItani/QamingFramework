@@ -1,30 +1,32 @@
 #include "Utils.h"
+#include<regex>
+#include<qpassworddigestor.h>
 
 Utils::Utils()
 {
 }
 
-string Utils:: HashPbdkf1(string& password){
-    string salt="saltsalt";
+std::string Utils:: HashPbdkf1(std::string password){
+    std::string salt="saltsalt";
     QByteArray bytePass(password.c_str(),password.length());
     QByteArray byteSalt(salt.c_str(),salt.length());
     QByteArray byteHash= QPasswordDigestor::deriveKeyPbkdf1(QCryptographicHash::Sha1, bytePass, byteSalt, 10, 20);
-    string hash(byteHash.constData(),byteHash.length());
+    std::string hash(byteHash.constData(),byteHash.length());
     return hash;
 }
 
-bool Utils:: IsValidPassword(string& password) {
-    regex hasNumber = regex("[0-9]+");
-    regex hasUpperChar = regex("[A-Z]+");
-    regex hasLowerChar = regex("[a-z]+");
-    regex hasMinimum8Chars = regex(".{8,}");
+bool Utils:: IsValidPassword(std::string password) {
+    std::regex hasNumber = std::regex("[0-9]+");
+    std::regex hasUpperChar = std::regex("[A-Z]+");
+    std::regex hasLowerChar = std::regex("[a-z]+");
+    std::regex hasMinimum8Chars = std::regex(".{8,}");
     return regex_search(password, hasNumber)
             && regex_search(password, hasUpperChar)
             && regex_search(password, hasLowerChar)
             && regex_search(password, hasMinimum8Chars);
 }
 
-bool IsLatinName(string& name)
+bool IsLatinName(std::string name)
 {
     if (name.size() == 0)return false;
 
@@ -39,7 +41,7 @@ bool IsLatinName(string& name)
     return true;
 }
 
-bool Utils:: IsValidName(string& name)
+bool Utils:: IsValidName(std::string name)
 {
     return !name.empty() && IsLatinName(name);
 }

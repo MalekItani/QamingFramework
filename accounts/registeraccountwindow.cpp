@@ -1,5 +1,6 @@
 #include "registeraccountwindow.h"
 #include <accounts/user.h>
+#include <Utils/Utils.h>
 
 #include <iostream>
 
@@ -29,12 +30,14 @@ registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
     gridLayout->addWidget(passwordLabel, 3, 0);
 
     passwordLineEdit = new QLineEdit();
+    passwordLineEdit->setEchoMode(QLineEdit::Password);
     gridLayout->addWidget(passwordLineEdit, 3, 1);
 
     retypePasswordLabel = new QLabel("Retype Password");
     gridLayout->addWidget(retypePasswordLabel, 4, 0);
 
     retypePasswordLineEdit = new QLineEdit();
+    retypePasswordLineEdit->setEchoMode(QLineEdit::Password);
     gridLayout->addWidget(retypePasswordLineEdit, 4, 1);
 
     genderLabel = new QLabel("Gender");
@@ -63,6 +66,8 @@ registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
     setLayout(gridLayout);
 
     QObject::connect(submitButton, SIGNAL(clicked(bool)), this, SLOT(registerAccount()));
+    QObject::connect(retypePasswordLineEdit, SIGNAL(textEdited(const QString&)), this, SLOT(checkMatchingPasswords(const QString&)));
+    QObject::connect(passwordLineEdit, SIGNAL(textEdited(const QString&)), this, SLOT(checkMatchingPasswords(const QString&)));
 }
 
 void registerAccountWindow::registerAccount(){
@@ -76,7 +81,8 @@ void registerAccountWindow::registerAccount(){
     user.setFirstName(firstNameLineEdit->text());
     user.setLastName(lastNameLineEdit->text());
     user.setUsername(usernameLineEdit->text());
-    user.setPassword(passwordLineEdit->text());
+    user.setPassword(QString::fromStdString(
+                         Utils::HashPbdkf1(passwordLineEdit->text().toStdString())));
 
     int gender;
     if(maleRadioButton->isChecked()) gender = 1;
@@ -91,4 +97,16 @@ void registerAccountWindow::registerAccount(){
             return;
     }
     close();
+}
+
+void registerAccountWindow::checkMatchingPasswords(const QString&){
+    if(passwordLineEdit->text() == retypePasswordLineEdit->text()){
+        QPalette palette;
+        palette.setColor(QPalette::Base,QColor(178, 238, 212));
+        retypePasswordLineEdit->setPalette(palette);
+    }else{
+        QPalette palette;
+        palette.setColor(QPalette::Base,QColor(255, 155, 155));
+        retypePasswordLineEdit->setPalette(palette);
+    }
 }

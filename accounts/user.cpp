@@ -2,6 +2,7 @@
 #include <QJsonObject>
 #include <QFile>
 #include <QJsonDocument>
+#include <QDir>
 
 
 User::User(){
@@ -26,6 +27,9 @@ int User::toJSON(){
     userJsonObject["dateOfBirth"] = dateOfBirthJsonObject;
 
     QJsonDocument document(userJsonObject);
+    QDir dir;
+    dir.mkpath("../QamingFramework/accounts/user_data");
+
     QString filename = "../QamingFramework/accounts/user_data/" + username + ".json";
 
     QFile userFile(filename);

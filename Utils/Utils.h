@@ -1,16 +1,15 @@
-#ifndef USER_H
-#define USER_H
-#include<regex>
-#include<qpassworddigestor.h>
+#ifndef UTILS_H
+#define UTILS_H
 
-using namespace std;
+#include <string>
+
 class Utils
 {
 public:
     Utils();
-    static bool IsValidPassword(string& password);
-    static bool IsValidName(string& name);
-    static string HashPbdkf1(string& password);
+    static bool IsValidPassword(std::string password);
+    static bool IsValidName(std::string name);
+    static std::string HashPbdkf1(std::string password);
 };
 
 #endif // USER_H
