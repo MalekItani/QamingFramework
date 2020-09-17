@@ -4,6 +4,15 @@ Utils::Utils()
 {
 }
 
+string Utils:: HashPbdkf1(string& password){
+    string salt="saltsalt";
+    QByteArray bytePass(password.c_str(),password.length());
+    QByteArray byteSalt(salt.c_str(),salt.length());
+    QByteArray byteHash= QPasswordDigestor::deriveKeyPbkdf1(QCryptographicHash::Sha1, bytePass, byteSalt, 10, 20);
+    string hash(byteHash.constData(),byteHash.length());
+    return hash;
+}
+
 bool Utils:: IsValidPassword(string& password) {
     regex hasNumber = regex("[0-9]+");
     regex hasUpperChar = regex("[A-Z]+");
