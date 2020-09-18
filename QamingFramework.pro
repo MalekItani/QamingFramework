@@ -1,6 +1,7 @@
 QT += widgets
 QT += network
 SOURCES += \
+    accounts/loginwindow.cpp \
     accounts/registeraccountwindow.cpp \
     Utils/Utils.cpp \
     accounts/user.cpp \
@@ -8,6 +9,7 @@ SOURCES += \
     main/mainwindow.cpp
 
 HEADERS += \
+    accounts/loginwindow.h \
     accounts/registeraccountwindow.h \
     Utils/Utils.h \
     accounts/user.h \

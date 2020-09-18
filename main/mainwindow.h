@@ -15,13 +15,14 @@ private:
     QLabel* titleLabel;
     QLabel* creditsLabel;
 
-    QPushButton* logInButton;
+    QPushButton* loginButton;
     QPushButton* registerButton;
     QPushButton* killCovidGameButton;
     QPushButton* reversiGameButton;
 
 public slots:
     void openRegisterAccountForm();
+    void openLoginForm();
 };
 
 #endif // MAINWINDOW_H

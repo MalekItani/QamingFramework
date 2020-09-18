@@ -67,17 +67,47 @@ registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
 
     setLayout(gridLayout);
 
+    errorBox = new QMessageBox();
+
     QObject::connect(submitButton, SIGNAL(clicked(bool)), this, SLOT(registerAccount()));
     QObject::connect(retypePasswordLineEdit, SIGNAL(textEdited(const QString&)), this, SLOT(checkMatchingPasswords(const QString&)));
     QObject::connect(passwordLineEdit, SIGNAL(textEdited(const QString&)), this, SLOT(checkMatchingPasswords(const QString&)));
 }
 
 void registerAccountWindow::registerAccount(){
-    if(passwordLineEdit->text() != retypePasswordLineEdit->text()){
-        // TODO: Post error message
+
+    if(!Utils::IsValidName(firstNameLineEdit->text().toStdString())){
+        errorBox->setWindowTitle("Invalid First Name");
+        errorBox->setText("First name must be non-empty and should consist of latin characters only.");
+        errorBox->exec();
         return;
     }
+
+    if(!Utils::IsValidName(lastNameLineEdit->text().toStdString())){
+        errorBox->setWindowTitle("Invalid Last Name");
+        errorBox->setText("Last name must be non-empty and should consist of latin characters only.");
+        errorBox->exec();
+        return;
+    }
+
+    if(passwordLineEdit->text() != retypePasswordLineEdit->text()){
+        errorBox->setWindowTitle("Passwords Mismatch");
+        errorBox->setText("Passwords do not match.");
+        errorBox->exec();
+        return;
+    }
+
     // TODO: Add sanity checks like gender selected, valid password, etc...
+    if(!Utils::IsValidPassword(passwordLineEdit->text().toStdString())){
+        errorBox->setWindowTitle("Invalid Password");
+        errorBox->setText("A valid password must fulfill the following criteria:\n\n\
+        - Password must be at least 8 characters long.\n\
+        - Password must contain at least one lowercase and one\n\
+          uppercase character.\n\
+        - Password must contain one digit [0-9].");
+        errorBox->exec();
+        return;
+    }
 
     User user;
     user.setFirstName(firstNameLineEdit->text());
@@ -86,9 +116,17 @@ void registerAccountWindow::registerAccount(){
     user.setPassword(QString::fromStdString(
                          Utils::HashPbdkf1(passwordLineEdit->text().toStdString())));
 
-    int gender;
+    int gender = 0;
     if(maleRadioButton->isChecked()) gender = 1;
     if(femaleRadioButton->isChecked()) gender = 2;
+
+    if(!gender){
+        errorBox->setWindowTitle("Please Select a Gender");
+        errorBox->setText("You have not selected a gender.");
+        errorBox->exec();
+        return;
+    }
+
     user.setGender(gender);
     user.setDateOfBirth(dateSelector->selectedDate());
 

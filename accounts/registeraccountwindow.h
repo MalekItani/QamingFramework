@@ -37,6 +37,8 @@ private:
 
     QCalendarWidget* dateSelector;
 
+    QMessageBox* errorBox;
+
 public slots:
     void registerAccount();
     void checkMatchingPasswords(const QString&);

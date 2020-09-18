@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include <accounts/registeraccountwindow.h>
-#include <iostream>
+#include <accounts/loginwindow.h>
+
+
 mainWindow::mainWindow(QWidget *parent) : QWidget(parent){
 
     vLayout = new QVBoxLayout();
@@ -25,8 +27,8 @@ mainWindow::mainWindow(QWidget *parent) : QWidget(parent){
 
     vLayout->addItem(new QSpacerItem(1, 48));
 
-    logInButton = new QPushButton("Log in to an existing account");
-    vLayout->addWidget(logInButton);
+    loginButton = new QPushButton("Log in to an existing account");
+    vLayout->addWidget(loginButton);
 
     registerButton = new QPushButton("New user? Register a new account!");
     vLayout->addWidget(registerButton);
@@ -40,10 +42,16 @@ mainWindow::mainWindow(QWidget *parent) : QWidget(parent){
     setLayout(vLayout);
 
     QObject::connect(registerButton, SIGNAL(clicked(bool)), this, SLOT(openRegisterAccountForm()));
+    QObject::connect(loginButton, SIGNAL(clicked(bool)), this, SLOT(openLoginForm()));
 
 }
 
 void mainWindow::openRegisterAccountForm(){
     registerAccountWindow *window = new registerAccountWindow();
+    window->show();
+}
+
+void mainWindow::openLoginForm(){
+    loginWindow *window = new loginWindow();
     window->show();
 }
