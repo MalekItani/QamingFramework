@@ -27,33 +27,26 @@ loginWindow::loginWindow(QWidget *parent) : QWidget(parent){
 
     setLayout(gridLayout);
 
-    errorBox = new QMessageBox();
-
     QObject::connect(submitButton, SIGNAL(clicked(bool)), this, SLOT(attempt_login()));
 }
 
 void loginWindow::attempt_login(){
     userPtr = new User();
-    int code = userPtr->fromJSON(usernameLineEdit->text(), QString::fromStdString(Utils::HashPbdkf1(passwordLineEdit->text().toStdString())) );
+    int code = userPtr->fromJSON(usernameLineEdit->text(), Utils::HashPbdkf1(passwordLineEdit->text()) );
     switch (code){
-        case 0:
-            break;
-        case 1:
-            errorBox->setWindowTitle("Login Failed");
-            errorBox->setText("No account with this username was found.");
-            errorBox->exec();
-            userPtr = NULL;
-            return;
-        case 2:
-            errorBox->setWindowTitle("Login Failed");
-            errorBox->setText("Incorrect password.");
-            errorBox->exec();
-            userPtr = NULL;
-            return;
+    case 0:
+        break;
+    case 1:
+        Utils::Popup("Login Failed","No account with this username was found.");
+        return;
+    case 2:
+
+        Utils::Popup("Login Failed","Incorrect password.");
+        userPtr = NULL;
+        return;
     }
-    errorBox->setWindowTitle("Login Successful");
-    errorBox->setText("Login Successful");
-    errorBox->exec();
+
+    Utils::Popup("Login Successful","Login Successful");
     emit userApproved(userPtr);
     close();
 }

@@ -1,10 +1,13 @@
 #include <QApplication>
-#include <QPushButton>
 #include <main/mainwindow.h>
+#include <exception>
 
-int main(int argc, char** argv){
+int main(int argc, char** argv)
+{
     QApplication app(argc, argv);
     mainWindow* window = new mainWindow();
     window->show();
-    return app.exec();
+    int exitCode= app.exec();
+    return exitCode;
 };
+

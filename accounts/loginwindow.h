@@ -23,8 +23,6 @@ private:
 
     QPushButton* submitButton;
 
-    QMessageBox* errorBox;
-
     User* userPtr;
 
 public slots:

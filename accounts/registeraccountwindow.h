@@ -40,8 +40,6 @@ private:
 
     QCalendarWidget* dateSelector;
 
-    QMessageBox* errorBox;
-
     User* userPtr;
 
 public slots:

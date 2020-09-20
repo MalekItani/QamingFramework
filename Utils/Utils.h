@@ -2,14 +2,18 @@
 #define UTILS_H
 
 #include <string>
+#include <QString>
+#include <QtWidgets>
 
 class Utils
 {
 public:
     Utils();
-    static bool IsValidPassword(std::string password);
-    static bool IsValidName(std::string name);
-    static std::string HashPbdkf1(std::string password);
+    static bool IsValidPassword(QString password);
+    static bool IsValidName(QString name);
+    static QString HashPbdkf1(QString password);
+    static bool fileExists(QString path);
+    static void Popup(QString errorTitle, QString errorMessage);
 };
 
 #endif // USER_H

@@ -1,7 +1,6 @@
 #include "registeraccountwindow.h"
 #include <accounts/user.h>
 #include <Utils/Utils.h>
-
 #include <iostream>
 
 registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
@@ -67,56 +66,50 @@ registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
 
     setLayout(gridLayout);
 
-    errorBox = new QMessageBox();
-
     QObject::connect(submitButton, SIGNAL(clicked(bool)), this, SLOT(registerAccount()));
     QObject::connect(retypePasswordLineEdit, SIGNAL(textEdited(const QString&)), this, SLOT(checkMatchingPasswords(const QString&)));
     QObject::connect(passwordLineEdit, SIGNAL(textEdited(const QString&)), this, SLOT(checkMatchingPasswords(const QString&)));
 }
 
-void registerAccountWindow::registerAccount(){
+void registerAccountWindow::registerAccount()
+{
 
-    if(!Utils::IsValidName(firstNameLineEdit->text().toStdString())){
-        errorBox->setWindowTitle("Invalid First Name");
-        errorBox->setText("First name must be non-empty and should consist of latin characters only.");
-        errorBox->exec();
+    if(!Utils::IsValidName(firstNameLineEdit->text())){
+        Utils::Popup("Invalid First Name","First name must be non-empty and should consist of latin characters only.");
         return;
     }
 
-    if(!Utils::IsValidName(lastNameLineEdit->text().toStdString())){
-        errorBox->setWindowTitle("Invalid Last Name");
-        errorBox->setText("Last name must be non-empty and should consist of latin characters only.");
-        errorBox->exec();
+    if(!Utils::IsValidName(lastNameLineEdit->text())){
+        Utils::Popup("Invalid Last Name","Last name must be non-empty and should consist of latin characters only.");
+        return;
+    }
+    if(Utils::fileExists("../QamingFramework/accounts/user_data/" + usernameLineEdit->text() + ".json")){
+        Utils::Popup("Username Taken","The username you chose is already taken, please try another username");
         return;
     }
 
     if(passwordLineEdit->text() != retypePasswordLineEdit->text()){
-        errorBox->setWindowTitle("Passwords Mismatch");
-        errorBox->setText("Passwords do not match.");
-        errorBox->exec();
+        Utils::Popup("Passwords Mismatch","Passwords do not match.");
         return;
     }
 
     // TODO: Add sanity checks like gender selected, valid password, etc...
-    if(!Utils::IsValidPassword(passwordLineEdit->text().toStdString())){
-        errorBox->setWindowTitle("Invalid Password");
-        errorBox->setText("A valid password must fulfill the following criteria:\n\n\
-        - Password must be at least 8 characters long.\n\
-        - Password must contain at least one lowercase and one\n\
-          uppercase character.\n\
-        - Password must contain one digit [0-9].");
-        errorBox->exec();
-        return;
+    if(!Utils::IsValidPassword(passwordLineEdit->text())){
+        Utils::Popup("Invalid Password","A valid password must fulfill the following criteria:\n\n\
+                          - Password must be at least 8 characters long.\n\
+                          - Password must contain at least one lowercase and one\n\
+                          uppercase character.\n\
+                          - Password must contain one digit [0-9].");
+                return;
     }
+
 
     int gender = 0;
     if(maleRadioButton->isChecked()) gender = 1;
     if(femaleRadioButton->isChecked()) gender = 2;
 
     if(!gender){
-        errorBox->setWindowTitle("Please Select a Gender");
-        errorBox->setText("You have not selected a gender.");
-        errorBox->exec();
+        Utils::Popup("Please Select a Gender","You have not selected a gender.");
         return;
     }
 
@@ -124,18 +117,17 @@ void registerAccountWindow::registerAccount(){
     userPtr->setFirstName(firstNameLineEdit->text());
     userPtr->setLastName(lastNameLineEdit->text());
     userPtr->setUsername(usernameLineEdit->text());
-    userPtr->setPassword(QString::fromStdString(
-                         Utils::HashPbdkf1(passwordLineEdit->text().toStdString())));
+    userPtr->setPassword(Utils::HashPbdkf1(passwordLineEdit->text()));
     userPtr->setProfilePicturePath("media/pp/default_male.png");
     userPtr->setGender(gender);
     userPtr->setDateOfBirth(dateSelector->selectedDate());
 
     int code = userPtr->toJSON();
     switch(code){
-        case 1:
-            std::cerr << "ERROR: Could not open JSON for write" << std::endl; // TODO: This is not appropriate
-            userPtr = NULL;
-            return;
+    case 1:
+        std::cerr << "ERROR: Could not open JSON for write" << std::endl; // TODO: This is not appropriate
+        userPtr = NULL;
+        return;
     }
     emit userApproved(userPtr);
     close();
