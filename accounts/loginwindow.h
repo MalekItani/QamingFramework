@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QWidget>
 #include <QtWidgets>
+#include<accounts/user.h>
+
 
 class loginWindow : public QWidget{
     Q_OBJECT
@@ -23,8 +25,13 @@ private:
 
     QMessageBox* errorBox;
 
+    User* userPtr;
+
 public slots:
     void attempt_login();
+
+signals:
+    void userApproved(User*);
 
 };
 

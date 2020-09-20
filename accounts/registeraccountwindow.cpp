@@ -109,13 +109,6 @@ void registerAccountWindow::registerAccount(){
         return;
     }
 
-    User user;
-    user.setFirstName(firstNameLineEdit->text());
-    user.setLastName(lastNameLineEdit->text());
-    user.setUsername(usernameLineEdit->text());
-    user.setPassword(QString::fromStdString(
-                         Utils::HashPbdkf1(passwordLineEdit->text().toStdString())));
-
     int gender = 0;
     if(maleRadioButton->isChecked()) gender = 1;
     if(femaleRadioButton->isChecked()) gender = 2;
@@ -127,15 +120,24 @@ void registerAccountWindow::registerAccount(){
         return;
     }
 
-    user.setGender(gender);
-    user.setDateOfBirth(dateSelector->selectedDate());
+    userPtr = new User();
+    userPtr->setFirstName(firstNameLineEdit->text());
+    userPtr->setLastName(lastNameLineEdit->text());
+    userPtr->setUsername(usernameLineEdit->text());
+    userPtr->setPassword(QString::fromStdString(
+                         Utils::HashPbdkf1(passwordLineEdit->text().toStdString())));
+    userPtr->setProfilePicturePath("media/pp/default_male.png");
+    userPtr->setGender(gender);
+    userPtr->setDateOfBirth(dateSelector->selectedDate());
 
-    int code = user.toJSON();
+    int code = userPtr->toJSON();
     switch(code){
         case 1:
             std::cerr << "ERROR: Could not open JSON for write" << std::endl; // TODO: This is not appropriate
+            userPtr = NULL;
             return;
     }
+    emit userApproved(userPtr);
     close();
 }
 
@@ -150,3 +152,4 @@ void registerAccountWindow::checkMatchingPasswords(const QString&){
         retypePasswordLineEdit->setPalette(palette);
     }
 }
+

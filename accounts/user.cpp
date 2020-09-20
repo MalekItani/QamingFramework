@@ -50,15 +50,15 @@ int User::fromJSON(QString username, QString password){
         QJsonObject userJsonObject = loadDoc.object();
 
         if(userJsonObject["password"] == password){
-            username = userJsonObject["username"].toString();
-            password = userJsonObject["password"].toString();
-            firstName = userJsonObject["firstName"].toString();
-            lastName = userJsonObject["lastName"].toString();
-            profilePicturePath = userJsonObject["firstName"].toString();
-            gender = userJsonObject["gender"].toInt();
+            this->username = userJsonObject["username"].toString();
+            this->password = userJsonObject["password"].toString();
+            this->firstName = userJsonObject["firstName"].toString();
+            this->lastName = userJsonObject["lastName"].toString();
+            this->profilePicturePath = userJsonObject["pathToProfilePic"].toString();
+            this->gender = userJsonObject["gender"].toInt();
 
             QJsonObject dateOfBirthJsonObject = userJsonObject["dateOfBirth"].toObject();
-            dateOfBirth = QDate(dateOfBirthJsonObject["year"].toInt(),
+            this->dateOfBirth = QDate(dateOfBirthJsonObject["year"].toInt(),
                                 dateOfBirthJsonObject["month"].toInt(),
                                 dateOfBirthJsonObject["day"].toInt());
             return 0;

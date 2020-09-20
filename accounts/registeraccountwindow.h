@@ -5,11 +5,14 @@
 #include <QWidget>
 #include <QtWidgets>
 
+#include <accounts/user.h>
+
 class registerAccountWindow : public QWidget
 {
     Q_OBJECT
 public:
     explicit registerAccountWindow(QWidget *parent = nullptr);
+
 private:
     QGridLayout* gridLayout;
     QVBoxLayout* genderButtonLayout;
@@ -39,9 +42,14 @@ private:
 
     QMessageBox* errorBox;
 
+    User* userPtr;
+
 public slots:
     void registerAccount();
     void checkMatchingPasswords(const QString&);
+
+signals:
+    void userApproved(User*);
 
 };
 

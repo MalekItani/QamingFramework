@@ -33,27 +33,27 @@ loginWindow::loginWindow(QWidget *parent) : QWidget(parent){
 }
 
 void loginWindow::attempt_login(){
-    User user;
-    int code = user.fromJSON(usernameLineEdit->text(), QString::fromStdString(Utils::HashPbdkf1(passwordLineEdit->text().toStdString())) );
+    userPtr = new User();
+    int code = userPtr->fromJSON(usernameLineEdit->text(), QString::fromStdString(Utils::HashPbdkf1(passwordLineEdit->text().toStdString())) );
     switch (code){
+        case 0:
+            break;
         case 1:
             errorBox->setWindowTitle("Login Failed");
             errorBox->setText("No account with this username was found.");
             errorBox->exec();
+            userPtr = NULL;
             return;
         case 2:
             errorBox->setWindowTitle("Login Failed");
             errorBox->setText("Incorrect password.");
             errorBox->exec();
+            userPtr = NULL;
             return;
     }
     errorBox->setWindowTitle("Login Successful");
-
-    if(user.getDateOfBirth() == QDate::currentDate()){
-        errorBox->setText("Welcome back, " + user.getFirstName() + " " + user.getLastName() + "!");
-    }else{
-        errorBox->setText("Happy Birthday, " + user.getFirstName() + " " + user.getLastName() + "!");
-    }
+    errorBox->setText("Login Successful");
     errorBox->exec();
+    emit userApproved(userPtr);
     close();
 }
