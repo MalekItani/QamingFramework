@@ -6,6 +6,7 @@
 #include <QtWidgets>
 
 #include <accounts/user.h>
+#include <accounts/profilepicturechooser.h>
 
 class registerAccountWindow : public QWidget
 {
@@ -40,6 +41,8 @@ private:
 
     QCalendarWidget* dateSelector;
 
+    ProfilePictureChooser* profilePictureChooser;
+
     User* userPtr;
 
 public slots:
@@ -48,7 +51,6 @@ public slots:
 
 signals:
     void userApproved(User*);
-
 };
 
 #endif // REGISTERACCOUNTWINDOW_H

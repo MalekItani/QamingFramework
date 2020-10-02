@@ -9,6 +9,7 @@ User::User(){
 
 }
 
+// Writes user into accounts/user_data/{username}.json
 int User::toJSON(){
 
     QJsonObject userJsonObject;
@@ -41,6 +42,22 @@ int User::toJSON(){
     return 1;
 }
 
+// Initializes a guest user (i.e. user with default properties)
+int User::fromJSON(){
+    if(!QFile::exists("../QamingFramerwork/accounts/" + username + ".json")){
+        username = "Guest";
+        password="";
+        firstName = "";
+        lastName = "";
+        gender=0;
+        dateOfBirth = QDate(2020, 2, 30); // Invalid date, will never wish a happy birthday :'(
+        profilePicturePath = "media/pp/default.png";
+        toJSON();
+    }
+    return fromJSON("Guest", "");
+}
+
+// Initializes a user from username or password
 int User::fromJSON(QString username, QString password){
     QFile userFile("../QamingFramework/accounts/user_data/" + username + ".json");
     if (userFile.open(QIODevice::ReadOnly)) {

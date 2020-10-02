@@ -1,0 +1,13 @@
+{
+    "dateOfBirth": {
+        "day": 0,
+        "month": 0,
+        "year": 0
+    },
+    "firstName": "",
+    "gender": 0,
+    "lastName": "",
+    "password": "",
+    "pathToProfilePic": "media/pp/default.png",
+    "username": "Guest"
+}

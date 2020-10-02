@@ -6,6 +6,8 @@
 #include <iostream>
 
 mainWindow::mainWindow(QWidget *parent) : QWidget(parent){
+    QSize windowSize = QSize(560, 600 );
+    setFixedSize(windowSize);
 
     buildRequestLoginLayout();
     buildDisplayGamesLayout();
@@ -46,6 +48,9 @@ void mainWindow::buildRequestLoginLayout(){
     registerButton = new QPushButton("New user? Register a new account!");
     requestLoginLayout->addWidget(registerButton);
 
+    playAsGuestButton = new QPushButton("Play as guest");
+    requestLoginLayout->addWidget(playAsGuestButton);
+
     requestLoginLayout->addItem(new QSpacerItem(1, 64));
 
     creditsLabel = new QLabel("A Gaming platform written in Qt by Malek Itani and Khalil Baydoun");
@@ -57,6 +62,7 @@ void mainWindow::buildRequestLoginLayout(){
 
     QObject::connect(registerButton, SIGNAL(clicked(bool)), this, SLOT(openRegisterAccountForm()));
     QObject::connect(loginButton, SIGNAL(clicked(bool)), this, SLOT(openLoginForm()));
+    QObject::connect(playAsGuestButton, SIGNAL(clicked(bool)), this, SLOT(loginAsGuest()));
 }
 
 
@@ -72,9 +78,27 @@ void mainWindow::buildDisplayGamesLayout(){
 
     displayGamesLayout->addWidget(titleLabel);
 
+    userDisplayLayout = new QHBoxLayout();
+    userDisplayLayout->addStretch();
+    QPixmap pixmap = QPixmap(":media/icons/edit_account.png").scaled(24, 24, Qt::KeepAspectRatio);
+    QIcon ButtonIcon(pixmap);
+
+    editAccountButton = new QPushButton();
+    editAccountButton->setIcon(ButtonIcon);
+    editAccountButton->setIconSize(pixmap.rect().size());
+    editAccountButton->setFixedSize(pixmap.rect().size() + QSize(4,4));
+    editAccountButton->setDefault(false);
+
+    userDisplayLayout->addWidget(editAccountButton,0,Qt::AlignTop);
+
+
     userProfilePicture = new QLabel();
     userProfilePicture->setAlignment(Qt::AlignCenter);
-    displayGamesLayout->addWidget(userProfilePicture);
+
+    userDisplayLayout->addWidget(userProfilePicture);
+
+    userDisplayLayout->addStretch();
+    displayGamesLayout->addItem(userDisplayLayout);
 
     usernameLabel = new QLabel();
     usernameLabel->setAlignment(Qt::AlignCenter);
@@ -112,6 +136,12 @@ void mainWindow::buildDisplayGamesLayout(){
 // ================================================================================================================================
 //                                                              SLOTS
 // ================================================================================================================================
+void mainWindow::loginAsGuest(){
+    User* user = new User();
+    user->fromJSON();
+    updateLayoutWithUserInfo(user);
+}
+
 void mainWindow::openRegisterAccountForm(){
     registerAccountWindow *window = new registerAccountWindow();
     QObject::connect(window, SIGNAL(userApproved(User*)), this, SLOT(updateLayoutWithUserInfo(User*)));
@@ -139,9 +169,11 @@ void mainWindow::updateLayoutWithUserInfo(User* user){
         messageBox = new QMessageBox();
         messageBox->setWindowTitle("Greetings");
         if(user->getDateOfBirth().month() == QDate::currentDate().month() && user->getDateOfBirth().day() == user->getDateOfBirth().day()){
-            messageBox->setText("Welcome back, " + user->getFirstName() + " " + user->getLastName() + "!");
-        }else{
             messageBox->setText("Happy Birthday, " + user->getFirstName() + " " + user->getLastName() + "!");
+        }else if(user->getUsername() == "Guest"){
+            messageBox->setText("You are logged in as Guest!");
+        }else{
+            messageBox->setText("Welcome back, " + user->getFirstName() + " " + user->getLastName() + "!");
         }
         messageBox->exec();
     }

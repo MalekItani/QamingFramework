@@ -23,6 +23,7 @@ public:
     void setDateOfBirth(QDate);
     void setGender(int);
 
+    int fromJSON();
     int fromJSON(QString, QString);
     int toJSON();
 

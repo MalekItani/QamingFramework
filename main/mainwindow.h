@@ -20,17 +20,20 @@ private:
 
     QVBoxLayout* requestLoginLayout;
     QVBoxLayout* displayGamesLayout;
+    QHBoxLayout* userDisplayLayout;
 
     QLabel* titleLabel;
     QLabel* creditsLabel;
     QLabel* usernameLabel;
     QLabel* userProfilePicture;
 
+    QPushButton* playAsGuestButton;
     QPushButton* loginButton;
     QPushButton* logoutButton;
     QPushButton* registerButton;
     QPushButton* killCovidGameButton;
     QPushButton* reversiGameButton;
+    QPushButton* editAccountButton;
 
     QMessageBox* messageBox;
 
@@ -42,6 +45,7 @@ public slots:
     void openLoginForm();
     void updateLayoutWithUserInfo(User*);
     void executeLogout();
+    void loginAsGuest();
 
 signals:
     void swapLayout(int);

@@ -61,8 +61,11 @@ registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
     dateSelector = new QCalendarWidget();
     gridLayout->addWidget(dateSelector, 6, 1);
 
+    profilePictureChooser = new ProfilePictureChooser();
+    gridLayout->addWidget(profilePictureChooser, 7, 0, 1, 2);
+
     submitButton = new QPushButton("Submit");
-    gridLayout->addWidget(submitButton, 7, 0, 1, 2);
+    gridLayout->addWidget(submitButton, 8, 0, 1, 2);
 
     setLayout(gridLayout);
 
@@ -71,8 +74,7 @@ registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
     QObject::connect(passwordLineEdit, SIGNAL(textEdited(const QString&)), this, SLOT(checkMatchingPasswords(const QString&)));
 }
 
-void registerAccountWindow::registerAccount()
-{
+void registerAccountWindow::registerAccount(){
 
     if(!Utils::IsValidName(firstNameLineEdit->text())){
         Utils::Popup("Invalid First Name","First name must be non-empty and should consist of latin characters only.");
@@ -118,7 +120,17 @@ void registerAccountWindow::registerAccount()
     userPtr->setLastName(lastNameLineEdit->text());
     userPtr->setUsername(usernameLineEdit->text());
     userPtr->setPassword(Utils::HashPbdkf1(passwordLineEdit->text()));
-    userPtr->setProfilePicturePath("media/pp/default_male.png");
+
+    if(profilePictureChooser->text().isEmpty()){
+        userPtr->setProfilePicturePath("media/pp/default_male.png");
+    }else{
+        QString destinationFilename = "media/pp/" + usernameLineEdit->text() + ".png";
+
+        if(QFile::exists("../QamingFramework/" + destinationFilename)) QFile::remove("../QamingFramework/" + destinationFilename);
+        QFile::copy(profilePictureChooser->text(), "../QamingFramework/" + destinationFilename);
+        userPtr->setProfilePicturePath(destinationFilename);
+    }
+
     userPtr->setGender(gender);
     userPtr->setDateOfBirth(dateSelector->selectedDate());
 
@@ -144,4 +156,3 @@ void registerAccountWindow::checkMatchingPasswords(const QString&){
         retypePasswordLineEdit->setPalette(palette);
     }
 }
-

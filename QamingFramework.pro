@@ -2,6 +2,7 @@ QT += widgets
 QT += network
 SOURCES += \
     accounts/loginwindow.cpp \
+    accounts/profilepicturechooser.cpp \
     accounts/registeraccountwindow.cpp \
     Utils/Utils.cpp \
     accounts/user.cpp \
@@ -10,7 +11,11 @@ SOURCES += \
 
 HEADERS += \
     accounts/loginwindow.h \
+    accounts/profilepicturechooser.h \
     accounts/registeraccountwindow.h \
     Utils/Utils.h \
     accounts/user.h \
     main/mainwindow.h
+
+RESOURCES += \
+    res.qrc
