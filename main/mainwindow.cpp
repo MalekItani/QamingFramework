@@ -2,6 +2,7 @@
 #include <accounts/registeraccountwindow.h>
 #include <accounts/loginwindow.h>
 #include <accounts/user.h>
+#include <KillCovid-19/killcovid-19scene.h>
 
 #include <iostream>
 
@@ -49,6 +50,7 @@ void mainWindow::buildRequestLoginLayout(){
     requestLoginLayout->addWidget(registerButton);
 
     playAsGuestButton = new QPushButton("Play as guest");
+
     requestLoginLayout->addWidget(playAsGuestButton);
 
     requestLoginLayout->addItem(new QSpacerItem(1, 64));
@@ -131,6 +133,7 @@ void mainWindow::buildDisplayGamesLayout(){
     QObject::connect(this, SIGNAL(updateUsernameLabel(const QString&)), usernameLabel, SLOT(setText(const QString&)));
     QObject::connect(this, SIGNAL(updateUserProfilePicture(const QPixmap&)), userProfilePicture, SLOT(setPixmap(const QPixmap&)));
     QObject::connect(logoutButton, SIGNAL(clicked(bool)), this, SLOT(executeLogout()));
+    QObject::connect(killCovidGameButton, SIGNAL(clicked(bool)), this, SLOT(StartKillCovidGame()));
 }
 
 // ================================================================================================================================
@@ -177,6 +180,16 @@ void mainWindow::updateLayoutWithUserInfo(User* user){
         }
         messageBox->exec();
     }
+}
+
+void mainWindow::StartKillCovidGame(){
+    KillCovid_19Scene *scene1=new KillCovid_19Scene();
+    QGraphicsView *view1=new QGraphicsView();
+    view1->setScene(scene1);
+    view1->setFixedSize(910,512);
+    view1->setHorizontalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
+    view1->setVerticalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
+    view1->show();
 }
 
 void mainWindow::executeLogout(){

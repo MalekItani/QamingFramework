@@ -46,6 +46,7 @@ public slots:
     void updateLayoutWithUserInfo(User*);
     void executeLogout();
     void loginAsGuest();
+    void StartKillCovidGame();
 
 signals:
     void swapLayout(int);

@@ -1,6 +1,7 @@
 QT += widgets
 QT += network
 SOURCES += \
+    KillCovid-19/killcovid-19scene.cpp \
     accounts/loginwindow.cpp \
     accounts/profilepicturechooser.cpp \
     accounts/registeraccountwindow.cpp \
@@ -10,6 +11,7 @@ SOURCES += \
     main/mainwindow.cpp
 
 HEADERS += \
+    KillCovid-19/killcovid-19scene.h \
     accounts/loginwindow.h \
     accounts/profilepicturechooser.h \
     accounts/registeraccountwindow.h \
