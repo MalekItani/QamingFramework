@@ -2,8 +2,9 @@
 #include <accounts/registeraccountwindow.h>
 #include <accounts/loginwindow.h>
 #include <accounts/user.h>
-#include <KillCovid-19/killcovid-19scene.h>
+#include <KillCovid-19/killcovid-19window.h>
 
+#include "Utils/Utils.h"
 #include <iostream>
 
 mainWindow::mainWindow(QWidget *parent) : QWidget(parent){
@@ -159,6 +160,7 @@ void mainWindow::openLoginForm(){
 
 void mainWindow::updateLayoutWithUserInfo(User* user){
     if(user){
+        activeUser=user;
         QString username = user->getUsername();
         emit updateUsernameLabel(username);
 
@@ -183,15 +185,24 @@ void mainWindow::updateLayoutWithUserInfo(User* user){
 }
 
 void mainWindow::StartKillCovidGame(){
-    KillCovid_19Scene *scene1=new KillCovid_19Scene();
-    QGraphicsView *view1=new QGraphicsView();
-    view1->setScene(scene1);
-    view1->setFixedSize(910,512);
-    view1->setHorizontalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
-    view1->setVerticalScrollBarPolicy((Qt::ScrollBarAlwaysOff));
-    view1->show();
+    KillCovidGameWindow= new KillCovid_19Window(activeUser->getUsername());
+    this->hide();
+    connect(KillCovidGameWindow->gameScene->exit, SIGNAL(clicked(bool)), this, SLOT(ShowLayout()));
+    connect(KillCovidGameWindow, SIGNAL(destoryed()), this, SLOT(ShowLayout()));
+    KillCovidGameWindow->show();
 }
 
 void mainWindow::executeLogout(){
     emit swapLayout(0);
 }
+
+void mainWindow::ShowLayout(){
+    if(KillCovidGameWindow!=nullptr){
+        KillCovidGameWindow->hide();
+        delete KillCovidGameWindow;
+    }
+
+    this->show();
+}
+
+

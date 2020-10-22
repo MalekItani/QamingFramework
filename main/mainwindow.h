@@ -6,7 +6,7 @@
 #include <QObject>
 
 #include <accounts/user.h>
-
+#include "KillCovid-19/killcovid-19window.h"
 
 class mainWindow : public QWidget{
     Q_OBJECT
@@ -14,8 +14,9 @@ public:
     explicit mainWindow(QWidget *parent = nullptr);
 private:
     QStackedLayout* activeLayout;
-
+    User*activeUser;
     QWidget* requestLoginPage;
+    KillCovid_19Window* KillCovidGameWindow;
     QWidget* displayGamesPage;
 
     QVBoxLayout* requestLoginLayout;
@@ -47,6 +48,7 @@ public slots:
     void executeLogout();
     void loginAsGuest();
     void StartKillCovidGame();
+    void ShowLayout();
 
 signals:
     void swapLayout(int);
