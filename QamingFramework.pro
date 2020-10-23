@@ -2,6 +2,7 @@ QT += widgets
 QT += network
 SOURCES += \
     KillCovid-19/killcovid-19window.cpp \
+    KillCovid-19/killcovid19scene.cpp \
     KillCovid-19/killcovid19view.cpp \
     KillCovid-19/killcoviduser.cpp \
     KillCovid-19/leaderboard.cpp \
@@ -16,6 +17,7 @@ SOURCES += \
 
 HEADERS += \
     KillCovid-19/killcovid-19window.h \
+    KillCovid-19/killcovid19scene.h \
     KillCovid-19/killcovid19view.h \
     KillCovid-19/killcoviduser.h \
     KillCovid-19/leaderboard.h \

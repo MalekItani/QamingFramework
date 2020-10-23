@@ -7,9 +7,9 @@ KillCovid_19Window::KillCovid_19Window(QString _username, QWidget *parent) : QWi
    MainLayout=new QHBoxLayout();
    leaderboard=new Leaderboard();
    playerDetails=new PlayerDetails(gameUser);
-   gameScene=new KillCovid_19View();
+   gameView=new KillCovid_19View();
    MainLayout->addWidget(playerDetails);
-   MainLayout->addWidget(gameScene);
+   MainLayout->addWidget(gameView);
    MainLayout->addWidget(leaderboard);
    this->setLayout(MainLayout);
 }

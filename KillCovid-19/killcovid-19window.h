@@ -18,7 +18,7 @@ public:
     explicit KillCovid_19Window(QString username, QWidget *parent = nullptr);
     Leaderboard * leaderboard;
     PlayerDetails * playerDetails;
-    KillCovid_19View * gameScene;
+    KillCovid_19View * gameView;
     KillCovidUser * gameUser;
     QPushButton*qPushButton1,*qPushButton2;
     QHBoxLayout* MainLayout;

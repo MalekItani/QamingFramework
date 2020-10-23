@@ -186,9 +186,9 @@ void mainWindow::updateLayoutWithUserInfo(User* user){
 
 void mainWindow::StartKillCovidGame(){
     KillCovidGameWindow= new KillCovid_19Window(activeUser->getUsername());
+    KillCovidGameWindow->setWindowTitle("Kill Covid-19");
     this->hide();
-    connect(KillCovidGameWindow->gameScene->exit, SIGNAL(clicked(bool)), this, SLOT(ShowLayout()));
-    connect(KillCovidGameWindow, SIGNAL(destoryed()), this, SLOT(ShowLayout()));
+    connect(KillCovidGameWindow->gameView->exit, SIGNAL(clicked(bool)), this, SLOT(ShowLayout()));
     KillCovidGameWindow->show();
 }
 

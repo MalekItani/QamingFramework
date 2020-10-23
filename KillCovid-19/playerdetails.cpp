@@ -5,6 +5,7 @@ PlayerDetails::PlayerDetails(KillCovidUser *user)
 {
     this->gameUser=user;
     QVBoxLayout* v=new QVBoxLayout();
+    v->addSpacing(50);
     v->addWidget(new QLabel("Player: "+ user->username));
     v->addSpacing(50);
     v->addWidget(new QLabel("HIGHSCORE: "+ QString::number(user->highScore)));
