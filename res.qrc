@@ -2,5 +2,15 @@
     <qresource prefix="/">
         <file>media/icons/edit_account.png</file>
         <file>media/killCovidGamePics/coronavirus-blue.jpg</file>
+        <file>KillCovid-19/res/virus_medium.png</file>
+        <file>KillCovid-19/res/virus_large.png</file>
+        <file>KillCovid-19/res/syringe.png</file>
+        <file>KillCovid-19/res/cursor.png</file>
+        <file>KillCovid-19/res/arrow.jpg</file>
+        <file>KillCovid-19/res/yellowGameBg.jpg</file>
+        <file>KillCovid-19/res/virus_small.png</file>
+        <file>KillCovid-19/res/virus_small_smashed.png</file>
+        <file>KillCovid-19/res/virus_medium_smashed.png</file>
+        <file>KillCovid-19/res/virus_large_smashed.png</file>
     </qresource>
 </RCC>

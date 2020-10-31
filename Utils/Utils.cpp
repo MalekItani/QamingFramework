@@ -63,3 +63,12 @@ void Utils::Popup(QString title, QString text){
     errorBox->setText(text);
     errorBox->exec();
 }
+
+void  Utils::delay(int milliSeconds)
+{
+    QEventLoop loop;
+    QTimer t;
+    t.connect(&t, &QTimer::timeout, &loop, &QEventLoop::quit);
+    t.start(milliSeconds);
+    loop.exec();
+}

@@ -9,7 +9,7 @@ KillCovid_19View::KillCovid_19View()
 {
     gameScene=new KillCovid_19Scene();
     this->setScene(gameScene);
-    auto titleLabel = new QLabel("KILL COVID-19",this);
+    titleLabel = new QLabel("KILL COVID-19",this);
     titleLabel->setGeometry(ButtonXPos-65,10,500,50);
     QFont titleFont( "Arial", 32, QFont::Bold);
     titleLabel->setFont(titleFont);
@@ -23,8 +23,9 @@ KillCovid_19View::KillCovid_19View()
     history=positionButton("History",InitialButtonPosition+ButtonHeight*2+2*ButtonSpacing);
     howToPlay=positionButton("How To Play",InitialButtonPosition+ButtonHeight*3+3*ButtonSpacing);
     exit=positionButton("Exit",InitialButtonPosition+ButtonHeight*4+4*ButtonSpacing);
+    connect(enterGame, SIGNAL(clicked(bool)), this, SLOT(StartGame()));
+    connect(gameScene, SIGNAL(toMainMenu()), this, SLOT(MainMenu()));
 }
-
 
 QPushButton* KillCovid_19View::positionButton(QString buttonText,int ypos)
 {
@@ -34,5 +35,31 @@ QPushButton* KillCovid_19View::positionButton(QString buttonText,int ypos)
     return button;
 }
 
+void  KillCovid_19View::StartGame()
+{
+    titleLabel->hide();
+    howToPlay->hide();
+    exit->hide();
+    history->hide();
+    gameSettings->hide();
+    enterGame->hide();
+    gameScene->StartGame();
+}
+
+void  KillCovid_19View::MainMenu()
+{
+    titleLabel->show();
+    howToPlay->show();
+    exit->show();
+    history->show();
+    gameSettings->show();
+    enterGame->show();
+    gameScene->MainMenu();
+}
 
 
+void KillCovid_19View::resizeEvent(QResizeEvent *event)
+{
+    QGraphicsView::resizeEvent(event);
+    fitInView(sceneRect(), Qt::IgnoreAspectRatio);
+}
