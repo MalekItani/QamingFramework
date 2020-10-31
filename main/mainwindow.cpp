@@ -80,17 +80,6 @@ void mainWindow::buildDisplayGamesLayout(){
 
     userDisplayLayout = new QHBoxLayout();
     userDisplayLayout->addStretch();
-    QPixmap pixmap = QPixmap(":media/icons/edit_account.png").scaled(24, 24, Qt::KeepAspectRatio);
-    QIcon ButtonIcon(pixmap);
-
-    editAccountButton = new QPushButton();
-    editAccountButton->setIcon(ButtonIcon);
-    editAccountButton->setIconSize(pixmap.rect().size());
-    editAccountButton->setFixedSize(pixmap.rect().size() + QSize(4,4));
-    editAccountButton->setDefault(false);
-
-    userDisplayLayout->addWidget(editAccountButton,0,Qt::AlignTop);
-
 
     userProfilePicture = new QLabel();
     userProfilePicture->setAlignment(Qt::AlignCenter);

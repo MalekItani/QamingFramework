@@ -33,7 +33,6 @@ private:
     QPushButton* registerButton;
     QPushButton* killCovidGameButton;
     QPushButton* reversiGameButton;
-    QPushButton* editAccountButton;
 
     QMessageBox* messageBox;
 
