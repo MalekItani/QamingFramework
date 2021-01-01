@@ -1,0 +1,118 @@
+\hypertarget{classUtils}{}\doxysection{Utils Class Reference}
+\label{classUtils}\index{Utils@{Utils}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classUtils_a562fd49b226302ac055bf566f87c370d}{Is\+Valid\+Password}} (Q\+String password)
+\begin{DoxyCompactList}\small\item\em validates that the password satisfies the requirements \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classUtils_a126b82e05787c0a5b8b9a38bf7e90026}{Is\+Valid\+Name}} (Q\+String name)
+\begin{DoxyCompactList}\small\item\em Checks if the name is valid (latin) \end{DoxyCompactList}\item 
+static Q\+String \mbox{\hyperlink{classUtils_afe95d8ffa44e6fc2e3bf9876d18654d3}{Hash\+Pbdkf1}} (Q\+String password)
+\begin{DoxyCompactList}\small\item\em hashes the password using pbdkf1 hashing algorithm \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classUtils_ad04a7821a89e1d687be8052450949d24}{file\+Exists}} (Q\+String path)
+\begin{DoxyCompactList}\small\item\em checks if a file with the sent path if it exists \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classUtils_a3c55bc51cd6275ad7b347f3a44711ae2}{Popup}} (Q\+String error\+Title, Q\+String error\+Message)
+\begin{DoxyCompactList}\small\item\em shows an error popup \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classUtils_a648b0f549a205694db30a82430cfdb70}{delay}} (int milli\+Seconds)
+\begin{DoxyCompactList}\small\item\em delays the app for a certain amount of time \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtils_a648b0f549a205694db30a82430cfdb70}\label{classUtils_a648b0f549a205694db30a82430cfdb70}} 
+\index{Utils@{Utils}!delay@{delay}}
+\index{delay@{delay}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily void Utils\+::delay (\begin{DoxyParamCaption}\item[{int}]{milli\+Seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+delays the app for a certain amount of time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em milli\+Seconds} & the number of milli seconds to be delayed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUtils_ad04a7821a89e1d687be8052450949d24}\label{classUtils_ad04a7821a89e1d687be8052450949d24}} 
+\index{Utils@{Utils}!fileExists@{fileExists}}
+\index{fileExists@{fileExists}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{fileExists()}{fileExists()}}
+{\footnotesize\ttfamily bool Utils\+::file\+Exists (\begin{DoxyParamCaption}\item[{Q\+String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+checks if a file with the sent path if it exists 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the file path to be checked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUtils_afe95d8ffa44e6fc2e3bf9876d18654d3}\label{classUtils_afe95d8ffa44e6fc2e3bf9876d18654d3}} 
+\index{Utils@{Utils}!HashPbdkf1@{HashPbdkf1}}
+\index{HashPbdkf1@{HashPbdkf1}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{HashPbdkf1()}{HashPbdkf1()}}
+{\footnotesize\ttfamily Q\+String Utils\+::\+Hash\+Pbdkf1 (\begin{DoxyParamCaption}\item[{Q\+String}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+hashes the password using pbdkf1 hashing algorithm 
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & the password to be hashed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUtils_a126b82e05787c0a5b8b9a38bf7e90026}\label{classUtils_a126b82e05787c0a5b8b9a38bf7e90026}} 
+\index{Utils@{Utils}!IsValidName@{IsValidName}}
+\index{IsValidName@{IsValidName}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{IsValidName()}{IsValidName()}}
+{\footnotesize\ttfamily bool Utils\+::\+Is\+Valid\+Name (\begin{DoxyParamCaption}\item[{Q\+String}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if the name is valid (latin) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name to be validated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUtils_a562fd49b226302ac055bf566f87c370d}\label{classUtils_a562fd49b226302ac055bf566f87c370d}} 
+\index{Utils@{Utils}!IsValidPassword@{IsValidPassword}}
+\index{IsValidPassword@{IsValidPassword}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{IsValidPassword()}{IsValidPassword()}}
+{\footnotesize\ttfamily bool Utils\+::\+Is\+Valid\+Password (\begin{DoxyParamCaption}\item[{Q\+String}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+validates that the password satisfies the requirements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & the password to be validated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUtils_a3c55bc51cd6275ad7b347f3a44711ae2}\label{classUtils_a3c55bc51cd6275ad7b347f3a44711ae2}} 
+\index{Utils@{Utils}!Popup@{Popup}}
+\index{Popup@{Popup}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{Popup()}{Popup()}}
+{\footnotesize\ttfamily void Utils\+::\+Popup (\begin{DoxyParamCaption}\item[{Q\+String}]{error\+Title,  }\item[{Q\+String}]{error\+Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+shows an error popup 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+Title} & the title of the error popup \\
+\hline
+{\em error\+Message} & the error message to be shown in the error popup \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Utils/\mbox{\hyperlink{Utils_8h}{Utils.\+h}}\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Utils/\mbox{\hyperlink{Utils_8cpp}{Utils.\+cpp}}\end{DoxyCompactItemize}

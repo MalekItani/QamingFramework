@@ -1,7 +1,15 @@
 #include "registeraccountwindow.h"
 #include <accounts/user.h>
 #include <Utils/Utils.h>
+#include <Utils/jsonio.h>
 #include <iostream>
+
+/**
+* \file registeraccountwindow.cpp
+* \brief This is the implementation for the window that lets users register new accounts.
+* This file defines where the various widgets are placed in the window.
+* \author Malek Itani
+*/
 
 registerAccountWindow::registerAccountWindow(QWidget *parent) : QWidget(parent){
 
@@ -85,7 +93,7 @@ void registerAccountWindow::registerAccount(){
         Utils::Popup("Invalid Last Name","Last name must be non-empty and should consist of latin characters only.");
         return;
     }
-    if(Utils::fileExists("../QamingFramework/accounts/user_data/" + usernameLineEdit->text() + ".json")){
+    if(Utils::fileExists("../accounts/user_data/" + usernameLineEdit->text() + ".json")){
         Utils::Popup("Username Taken","The username you chose is already taken, please try another username");
         return;
     }
@@ -122,12 +130,12 @@ void registerAccountWindow::registerAccount(){
     userPtr->setPassword(Utils::HashPbdkf1(passwordLineEdit->text()));
 
     if(profilePictureChooser->text().isEmpty()){
-        userPtr->setProfilePicturePath("media/pp/default_male.png");
+        userPtr->setProfilePicturePath("media/pp/default.png");
     }else{
         QString destinationFilename = "media/pp/" + usernameLineEdit->text() + ".png";
 
-        if(QFile::exists("../QamingFramework/" + destinationFilename)) QFile::remove("../QamingFramework/" + destinationFilename);
-        QFile::copy(profilePictureChooser->text(), "../QamingFramework/" + destinationFilename);
+        if(QFile::exists("../" + destinationFilename)) QFile::remove("../" + destinationFilename);
+        QFile::copy(profilePictureChooser->text(), "../" + destinationFilename);
         userPtr->setProfilePicturePath(destinationFilename);
     }
 
@@ -136,8 +144,8 @@ void registerAccountWindow::registerAccount(){
 
     int code = userPtr->toJSON();
     switch(code){
-    case 1:
-        std::cerr << "ERROR: Could not open JSON for write" << std::endl; // TODO: This is not appropriate
+    case JsonIO::JSON_ERROR:
+        std::cerr << "ERROR: Could not open JSON file for write" << std::endl; // TODO: This is not appropriate
         userPtr = NULL;
         return;
     }

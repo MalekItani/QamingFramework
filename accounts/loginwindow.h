@@ -7,6 +7,12 @@
 #include<accounts/user.h>
 
 
+/**
+* \file loginwindow.h
+* \brief Header file of the window that users will use to login to their accounts.
+* \author Malek Itani
+*/
+
 class loginWindow : public QWidget{
     Q_OBJECT
 public:
@@ -26,9 +32,15 @@ private:
     User* userPtr;
 
 public slots:
+    /**
+    * \brief Tries to perform a login given the entered credentials.
+    */
     void attempt_login();
 
 signals:
+    /**
+    * \brief Returns a pointer to the user object that just logged in.
+    */
     void userApproved(User*);
 
 };

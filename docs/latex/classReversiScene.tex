@@ -1,0 +1,260 @@
+\hypertarget{classReversiScene}{}\doxysection{Reversi\+Scene Class Reference}
+\label{classReversiScene}\index{ReversiScene@{ReversiScene}}
+Inheritance diagram for Reversi\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classReversiScene}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classReversiScene_ad6a526766e6024297c21b00a37072fdf}\label{classReversiScene_ad6a526766e6024297c21b00a37072fdf}} 
+void \mbox{\hyperlink{classReversiScene_ad6a526766e6024297c21b00a37072fdf}{Update\+Time}} ()
+\begin{DoxyCompactList}\small\item\em update the timers for the players \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classReversiScene_ac25b19b84186cfee2a2ddb8bc2e7ff7e}\label{classReversiScene_ac25b19b84186cfee2a2ddb8bc2e7ff7e}} 
+void \mbox{\hyperlink{classReversiScene_ac25b19b84186cfee2a2ddb8bc2e7ff7e}{score\+Update}} (int black, int white)
+\begin{DoxyCompactList}\small\item\em signal emitted to update the scores \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiScene_a00e682bf8753a9564acbdace53079024}\label{classReversiScene_a00e682bf8753a9564acbdace53079024}} 
+void \mbox{\hyperlink{classReversiScene_a00e682bf8753a9564acbdace53079024}{time\+Update}} (int time\+Black, int time\+White)
+\begin{DoxyCompactList}\small\item\em signal emitted to update the timers \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiScene_ab36c9bcba3a0572098f8f7dad15d3c71}\label{classReversiScene_ab36c9bcba3a0572098f8f7dad15d3c71}} 
+void \mbox{\hyperlink{classReversiScene_ab36c9bcba3a0572098f8f7dad15d3c71}{game\+Over}} (\mbox{\hyperlink{classReversiRun}{Reversi\+Run}} $\ast$run)
+\begin{DoxyCompactList}\small\item\em signal emitted when the game ends \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classReversiScene_a398027e8d4a8d0ee30a683952108c8a8}\label{classReversiScene_a398027e8d4a8d0ee30a683952108c8a8}} 
+void \mbox{\hyperlink{classReversiScene_a398027e8d4a8d0ee30a683952108c8a8}{Start\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Starts the game . \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiScene_a28b149e72fadee9a570ab6dd8ab38ccd}\label{classReversiScene_a28b149e72fadee9a570ab6dd8ab38ccd}} 
+void \mbox{\hyperlink{classReversiScene_a28b149e72fadee9a570ab6dd8ab38ccd}{Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em shows the main menu of the game \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReversiScene_a0161f8d309bb728744e53036009972fb}{inialize\+Text\+Item}} (Q\+Graphics\+Text\+Item $\ast$\&item, int x, int y)
+\begin{DoxyCompactList}\small\item\em initializes a graphics text item and adds it to the scene \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiScene_aac8cbf04658c0c3c8248f736c0130719}\label{classReversiScene_aac8cbf04658c0c3c8248f736c0130719}} 
+void \mbox{\hyperlink{classReversiScene_aac8cbf04658c0c3c8248f736c0130719}{End\+Game}} ()
+\begin{DoxyCompactList}\small\item\em makes the necessary updates and deletes when the game ends \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReversiScene_ab7972098ea19cdb70a8088017b457b59}{Create\+Stone}} (bool stone\+Color, int xcor, int ycor)
+\begin{DoxyCompactList}\small\item\em initializes a \mbox{\hyperlink{classStone}{Stone}} item and adds it to the scene \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiScene_afc1340ce8bfdbde8f311a4d914591d61}\label{classReversiScene_afc1340ce8bfdbde8f311a4d914591d61}} 
+void \mbox{\hyperlink{classReversiScene_afc1340ce8bfdbde8f311a4d914591d61}{mouse\+Press\+Event}} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Called when the mouse is pressed to place a stone on the board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classReversiScene_a87b6e692d86d2e810abf3db935c140b7}{Check\+Val}} (int x, int y, bool value)
+\begin{DoxyCompactList}\small\item\em checks if the stone at the given position has the sent color \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classReversiScene_a43137ea4aee84e26f23900ee672ff2dc}{Check\+If\+Valid\+Move}} (int x, int y, bool value)
+\begin{DoxyCompactList}\small\item\em checks if stone can be placed at the given coordinates \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classReversiScene_a0c07cacae1e472cf5934be503c36dbf2}{Check\+Path}} (int xcur, int ycur, int x\+Inc, int y\+Inc, bool value)
+\begin{DoxyCompactList}\small\item\em checks if path can be outflanked \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classReversiScene_ad6c64406decb9640e51d7f50a3395241}{Check\+If\+There\+Is\+Possible\+Move}} (bool stone\+Type)
+\begin{DoxyCompactList}\small\item\em checks if player with the given stone color has a valid move \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReversiScene_a313664393b4bbc1bca9559e8cfbb6c95}{Flip\+Path}} (int xcur, int ycur, int x\+Inc, int y\+Inc, bool value)
+\begin{DoxyCompactList}\small\item\em flips the path \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReversiScene_ad59aa12b09ca19b04a87ce857ed9f8bd}{Play\+Move}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em plays a move at the specified position \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiScene_ab7e7667cb23b7cf94b75e6fead538628}\label{classReversiScene_ab7e7667cb23b7cf94b75e6fead538628}} 
+void \mbox{\hyperlink{classReversiScene_ab7e7667cb23b7cf94b75e6fead538628}{Print\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em plays a turn \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classReversiScene_adea1cd531c8307beed3a9accf01232e0}\label{classReversiScene_adea1cd531c8307beed3a9accf01232e0}} 
+bool {\bfseries game\+Ended} =false
+\item 
+\mbox{\Hypertarget{classReversiScene_a9753c930fd60751d192e99334d07e0b8}\label{classReversiScene_a9753c930fd60751d192e99334d07e0b8}} 
+bool {\bfseries turn} =false
+\item 
+\mbox{\Hypertarget{classReversiScene_a648704ac64929c648c883d05527cdf20}\label{classReversiScene_a648704ac64929c648c883d05527cdf20}} 
+bool {\bfseries game\+Started} =false
+\item 
+\mbox{\Hypertarget{classReversiScene_afd25c432907983b58f247ac3bc33c724}\label{classReversiScene_afd25c432907983b58f247ac3bc33c724}} 
+int {\bfseries black\+Cnt} =2
+\item 
+\mbox{\Hypertarget{classReversiScene_aa5fb288ac81d4952a1101f343d5a13f4}\label{classReversiScene_aa5fb288ac81d4952a1101f343d5a13f4}} 
+int {\bfseries white\+Cnt} =2
+\item 
+\mbox{\Hypertarget{classReversiScene_ae3eb3b7b911346d9f5a65aea07d58b12}\label{classReversiScene_ae3eb3b7b911346d9f5a65aea07d58b12}} 
+int {\bfseries black\+Player\+Time\+Remaining} =300
+\item 
+\mbox{\Hypertarget{classReversiScene_a5f30f4151fd57ada9eb0177e916c54c8}\label{classReversiScene_a5f30f4151fd57ada9eb0177e916c54c8}} 
+int {\bfseries white\+Player\+Time\+Remaining} =300
+\item 
+\mbox{\Hypertarget{classReversiScene_a3c1ba19dc5121fa439813003b95bb367}\label{classReversiScene_a3c1ba19dc5121fa439813003b95bb367}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classStone}{Stone}} $\ast$ $>$ $>$ {\bfseries stones}
+\item 
+\mbox{\Hypertarget{classReversiScene_a20351f55e8d3872db00cc8280c0ca12f}\label{classReversiScene_a20351f55e8d3872db00cc8280c0ca12f}} 
+Q\+Graphics\+Text\+Item $\ast$ {\bfseries black\+Turn}
+\item 
+\mbox{\Hypertarget{classReversiScene_a90a8d71faff1d328b954729fd7b4be68}\label{classReversiScene_a90a8d71faff1d328b954729fd7b4be68}} 
+Q\+Graphics\+Text\+Item $\ast$ {\bfseries white\+Turn}
+\item 
+\mbox{\Hypertarget{classReversiScene_a3732ecc52c7d9bfd4d4b4c4aaa1fe6e9}\label{classReversiScene_a3732ecc52c7d9bfd4d4b4c4aaa1fe6e9}} 
+Q\+Timer $\ast$ {\bfseries time\+Update\+Timer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classReversiScene_ad6c64406decb9640e51d7f50a3395241}\label{classReversiScene_ad6c64406decb9640e51d7f50a3395241}} 
+\index{ReversiScene@{ReversiScene}!CheckIfThereIsPossibleMove@{CheckIfThereIsPossibleMove}}
+\index{CheckIfThereIsPossibleMove@{CheckIfThereIsPossibleMove}!ReversiScene@{ReversiScene}}
+\doxysubsubsection{\texorpdfstring{CheckIfThereIsPossibleMove()}{CheckIfThereIsPossibleMove()}}
+{\footnotesize\ttfamily bool Reversi\+Scene\+::\+Check\+If\+There\+Is\+Possible\+Move (\begin{DoxyParamCaption}\item[{bool}]{stone\+Type }\end{DoxyParamCaption})}
+
+
+
+checks if player with the given stone color has a valid move 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stone\+Type} & the color of the stone \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classReversiScene_a43137ea4aee84e26f23900ee672ff2dc}\label{classReversiScene_a43137ea4aee84e26f23900ee672ff2dc}} 
+\index{ReversiScene@{ReversiScene}!CheckIfValidMove@{CheckIfValidMove}}
+\index{CheckIfValidMove@{CheckIfValidMove}!ReversiScene@{ReversiScene}}
+\doxysubsubsection{\texorpdfstring{CheckIfValidMove()}{CheckIfValidMove()}}
+{\footnotesize\ttfamily bool Reversi\+Scene\+::\+Check\+If\+Valid\+Move (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+checks if stone can be placed at the given coordinates 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x position of the stone item in the scene \\
+\hline
+{\em y} & the y position of the stone item in the scene \\
+\hline
+{\em value} & the color of the stone \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classReversiScene_a0c07cacae1e472cf5934be503c36dbf2}\label{classReversiScene_a0c07cacae1e472cf5934be503c36dbf2}} 
+\index{ReversiScene@{ReversiScene}!CheckPath@{CheckPath}}
+\index{CheckPath@{CheckPath}!ReversiScene@{ReversiScene}}
+\doxysubsubsection{\texorpdfstring{CheckPath()}{CheckPath()}}
+{\footnotesize\ttfamily int Reversi\+Scene\+::\+Check\+Path (\begin{DoxyParamCaption}\item[{int}]{xcur,  }\item[{int}]{ycur,  }\item[{int}]{x\+Inc,  }\item[{int}]{y\+Inc,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+checks if path can be outflanked 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x position of the stone item in the scene \\
+\hline
+{\em y} & the y position of the stone item in the scene \\
+\hline
+{\em x\+Inc} & the x increment to the position of the stone item in the scene \\
+\hline
+{\em y\+Inc} & the y increment to the position of the stone item in the scene \\
+\hline
+{\em value} & the color of the stone \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classReversiScene_a87b6e692d86d2e810abf3db935c140b7}\label{classReversiScene_a87b6e692d86d2e810abf3db935c140b7}} 
+\index{ReversiScene@{ReversiScene}!CheckVal@{CheckVal}}
+\index{CheckVal@{CheckVal}!ReversiScene@{ReversiScene}}
+\doxysubsubsection{\texorpdfstring{CheckVal()}{CheckVal()}}
+{\footnotesize\ttfamily bool Reversi\+Scene\+::\+Check\+Val (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+checks if the stone at the given position has the sent color 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x position of the stone item in the scene \\
+\hline
+{\em y} & the y position of the stone item in the scene \\
+\hline
+{\em value} & the color of the stone \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classReversiScene_ab7972098ea19cdb70a8088017b457b59}\label{classReversiScene_ab7972098ea19cdb70a8088017b457b59}} 
+\index{ReversiScene@{ReversiScene}!CreateStone@{CreateStone}}
+\index{CreateStone@{CreateStone}!ReversiScene@{ReversiScene}}
+\doxysubsubsection{\texorpdfstring{CreateStone()}{CreateStone()}}
+{\footnotesize\ttfamily void Reversi\+Scene\+::\+Create\+Stone (\begin{DoxyParamCaption}\item[{bool}]{stone\+Color,  }\item[{int}]{xcor,  }\item[{int}]{ycor }\end{DoxyParamCaption})}
+
+
+
+initializes a \mbox{\hyperlink{classStone}{Stone}} item and adds it to the scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stone\+Color} & the color of the stone \\
+\hline
+{\em x} & the x position of the stone item in the scene \\
+\hline
+{\em y} & the y position of the stone item in the scene \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classReversiScene_a313664393b4bbc1bca9559e8cfbb6c95}\label{classReversiScene_a313664393b4bbc1bca9559e8cfbb6c95}} 
+\index{ReversiScene@{ReversiScene}!FlipPath@{FlipPath}}
+\index{FlipPath@{FlipPath}!ReversiScene@{ReversiScene}}
+\doxysubsubsection{\texorpdfstring{FlipPath()}{FlipPath()}}
+{\footnotesize\ttfamily void Reversi\+Scene\+::\+Flip\+Path (\begin{DoxyParamCaption}\item[{int}]{xcur,  }\item[{int}]{ycur,  }\item[{int}]{x\+Inc,  }\item[{int}]{y\+Inc,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+flips the path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xcur} & the x position of the stone item in the scene \\
+\hline
+{\em ycur} & the y position of the stone item in the scene \\
+\hline
+{\em x\+Inc} & the x increment to the position of the stone item in the scene \\
+\hline
+{\em y\+Inc} & the y increment to the position of the stone item in the scene \\
+\hline
+{\em value} & the color of the stone \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classReversiScene_a0161f8d309bb728744e53036009972fb}\label{classReversiScene_a0161f8d309bb728744e53036009972fb}} 
+\index{ReversiScene@{ReversiScene}!inializeTextItem@{inializeTextItem}}
+\index{inializeTextItem@{inializeTextItem}!ReversiScene@{ReversiScene}}
+\doxysubsubsection{\texorpdfstring{inializeTextItem()}{inializeTextItem()}}
+{\footnotesize\ttfamily void Reversi\+Scene\+::inialize\+Text\+Item (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Text\+Item $\ast$\&}]{item,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+initializes a graphics text item and adds it to the scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & the text item to be initialized \\
+\hline
+{\em x} & the x position of the text item in the scene \\
+\hline
+{\em y} & the y position of the text item in the scene \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classReversiScene_ad59aa12b09ca19b04a87ce857ed9f8bd}\label{classReversiScene_ad59aa12b09ca19b04a87ce857ed9f8bd}} 
+\index{ReversiScene@{ReversiScene}!PlayMove@{PlayMove}}
+\index{PlayMove@{PlayMove}!ReversiScene@{ReversiScene}}
+\doxysubsubsection{\texorpdfstring{PlayMove()}{PlayMove()}}
+{\footnotesize\ttfamily void Reversi\+Scene\+::\+Play\+Move (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+plays a move at the specified position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x position of the stone item in the scene \\
+\hline
+{\em y} & the y position of the stone item in the scene \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Reversi/\mbox{\hyperlink{reversiscene_8h}{reversiscene.\+h}}\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/build/moc\+\_\+reversiscene.\+cpp\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Reversi/\mbox{\hyperlink{reversiscene_8cpp}{reversiscene.\+cpp}}\end{DoxyCompactItemize}

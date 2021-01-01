@@ -1,0 +1,67 @@
+\hypertarget{classJsonIO}{}\doxysection{Json\+IO Class Reference}
+\label{classJsonIO}\index{JsonIO@{JsonIO}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classJsonIO_acd95483d1c95d55e6bc3bfb071295bdc}{write\+Object}} (Q\+Json\+Object \&object, const Q\+String \&path)
+\begin{DoxyCompactList}\small\item\em Writes a J\+S\+ON object to the desired path. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classJsonIO_a827cef610490be364aace2638a698a95}{read\+Object}} (Q\+Json\+Object \&object, const Q\+String \&path)
+\begin{DoxyCompactList}\small\item\em Reads a J\+S\+ON object from the desired path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJsonIO_a11c07d3162ad0137ff51b754b82eb3ae}\label{classJsonIO_a11c07d3162ad0137ff51b754b82eb3ae}} 
+static const int {\bfseries J\+S\+O\+N\+\_\+\+E\+R\+R\+OR} = 0
+\item 
+\mbox{\Hypertarget{classJsonIO_ab0742d114308f487cac67ee10b27a0bb}\label{classJsonIO_ab0742d114308f487cac67ee10b27a0bb}} 
+static const int {\bfseries J\+S\+O\+N\+\_\+\+S\+U\+C\+C\+E\+SS} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJsonIO_a827cef610490be364aace2638a698a95}\label{classJsonIO_a827cef610490be364aace2638a698a95}} 
+\index{JsonIO@{JsonIO}!readObject@{readObject}}
+\index{readObject@{readObject}!JsonIO@{JsonIO}}
+\doxysubsubsection{\texorpdfstring{readObject()}{readObject()}}
+{\footnotesize\ttfamily int Json\+I\+O\+::read\+Object (\begin{DoxyParamCaption}\item[{Q\+Json\+Object \&}]{object,  }\item[{const Q\+String \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reads a J\+S\+ON object from the desired path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object to read. \\
+\hline
+{\em path} & Path to read this object to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Json\+I\+O\+::\+J\+S\+O\+N\+\_\+\+S\+U\+C\+C\+E\+SS in case of successful write or Json\+I\+O\+::\+J\+S\+O\+N\+\_\+\+E\+R\+R\+OR on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJsonIO_acd95483d1c95d55e6bc3bfb071295bdc}\label{classJsonIO_acd95483d1c95d55e6bc3bfb071295bdc}} 
+\index{JsonIO@{JsonIO}!writeObject@{writeObject}}
+\index{writeObject@{writeObject}!JsonIO@{JsonIO}}
+\doxysubsubsection{\texorpdfstring{writeObject()}{writeObject()}}
+{\footnotesize\ttfamily int Json\+I\+O\+::write\+Object (\begin{DoxyParamCaption}\item[{Q\+Json\+Object \&}]{object,  }\item[{const Q\+String \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a J\+S\+ON object to the desired path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Object to write. \\
+\hline
+{\em path} & Path to write this object to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Json\+I\+O\+::\+J\+S\+O\+N\+\_\+\+S\+U\+C\+C\+E\+SS in case of successful write or Json\+I\+O\+::\+J\+S\+O\+N\+\_\+\+E\+R\+R\+OR on failure. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Utils/\mbox{\hyperlink{jsonio_8h}{jsonio.\+h}}\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Utils/\mbox{\hyperlink{jsonio_8cpp}{jsonio.\+cpp}}\end{DoxyCompactItemize}

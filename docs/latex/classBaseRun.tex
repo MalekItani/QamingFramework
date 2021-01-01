@@ -1,0 +1,182 @@
+\hypertarget{classBaseRun}{}\doxysection{Base\+Run Class Reference}
+\label{classBaseRun}\index{BaseRun@{BaseRun}}
+Inheritance diagram for Base\+Run\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBaseRun}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBaseRun_a4aa9294541f9cc16a302f3c3ba9abbe1}{Base\+Run}} (int id)
+\begin{DoxyCompactList}\small\item\em Initializes a run from its ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBaseRun_aada59072ac7187c470433c4270929134}{Base\+Run}} (const Q\+String \&path)
+\begin{DoxyCompactList}\small\item\em Initializes a run from its path in the game subsystem. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBaseRun_a45c456f7d562741607d3187ea3b95079}\label{classBaseRun_a45c456f7d562741607d3187ea3b95079}} 
+Q\+String \mbox{\hyperlink{classBaseRun_a45c456f7d562741607d3187ea3b95079}{get\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Returns run path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBaseRun_a8e1fa03f0df95120f6b2fca4f41b75a1}\label{classBaseRun_a8e1fa03f0df95120f6b2fca4f41b75a1}} 
+virtual int \mbox{\hyperlink{classBaseRun_a8e1fa03f0df95120f6b2fca4f41b75a1}{to\+Json}} ()=0
+\begin{DoxyCompactList}\small\item\em Saves a run as a J\+S\+ON file. Must be overridden by game-\/specific runs to store game-\/specific attributes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBaseRun_a73825a37dcb41994f8180516dcf6471d}\label{classBaseRun_a73825a37dcb41994f8180516dcf6471d}} 
+virtual int \mbox{\hyperlink{classBaseRun_a73825a37dcb41994f8180516dcf6471d}{from\+Json}} ()=0
+\begin{DoxyCompactList}\small\item\em Initializes a run from a J\+S\+ON file. Must be overridden by game-\/specific runs to load game-\/specific attributes. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBaseRun_a8e79c51565b035d3dee8683175fb56d0}{less\+Than}} (const \mbox{\hyperlink{classBaseRun}{Base\+Run}} $\ast$rhs)=0
+\begin{DoxyCompactList}\small\item\em Defines a way to evaluate two runs in order to place them on a leaderboard. Must be overridden by game-\/specific runs to compare game-\/specific runs that might weigh game attributes differently. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBaseRun_a76e88a4411f27b49f13592ee38c2d72e}\label{classBaseRun_a76e88a4411f27b49f13592ee38c2d72e}} 
+virtual int \mbox{\hyperlink{classBaseRun_a76e88a4411f27b49f13592ee38c2d72e}{get\+Score}} ()=0
+\begin{DoxyCompactList}\small\item\em Defines how score for this type of Run is computed. Must be overridden by game-\/specific runs to retrieve a score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBaseRun_acf79295d28a73be7c7883027082c29af}\label{classBaseRun_acf79295d28a73be7c7883027082c29af}} 
+int \mbox{\hyperlink{classBaseRun_acf79295d28a73be7c7883027082c29af}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Run ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseRun_ab7b197c5255fb85761a6c8aa74ea816e}{set\+Id}} (int \+\_\+id)
+\begin{DoxyCompactList}\small\item\em Sets the Run ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseRun_a74e324f3efd252760afba66766b96bfd}{set\+Path}} (const Q\+String \&new\+Path)
+\begin{DoxyCompactList}\small\item\em Sets the Run path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseRun_a8e113f1e1910722235d9881f458d3952}{set\+Player\+Name}} (const Q\+String \&player\+Name)
+\begin{DoxyCompactList}\small\item\em Sets the player name who is associated with this run. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseRun_a24235e788d15486e789cfcd82b991c52}{set\+Date\+Time}} (const Q\+Date\+Time \&dt)
+\begin{DoxyCompactList}\small\item\em Sets the datetime at which the run was played. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBaseRun_a4b770734d00e948e2ecc2ef09af68884}\label{classBaseRun_a4b770734d00e948e2ecc2ef09af68884}} 
+Q\+String \mbox{\hyperlink{classBaseRun_a4b770734d00e948e2ecc2ef09af68884}{get\+Player\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the player name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBaseRun_a8a7364e9da1aa2bd081ddf2844bcc77f}\label{classBaseRun_a8a7364e9da1aa2bd081ddf2844bcc77f}} 
+Q\+Date\+Time \mbox{\hyperlink{classBaseRun_a8a7364e9da1aa2bd081ddf2844bcc77f}{get\+Date\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Returns the datetime. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBaseRun_ab0e8670b9ed99003adb959c410782fb0}\label{classBaseRun_ab0e8670b9ed99003adb959c410782fb0}} 
+int {\bfseries id}
+\item 
+\mbox{\Hypertarget{classBaseRun_aa415c2d62b41c1adf01aeb17fabcaa15}\label{classBaseRun_aa415c2d62b41c1adf01aeb17fabcaa15}} 
+Q\+String {\bfseries path}
+\item 
+\mbox{\Hypertarget{classBaseRun_a3d1590a8f9ccf1b42ed136b0c2eb8fe6}\label{classBaseRun_a3d1590a8f9ccf1b42ed136b0c2eb8fe6}} 
+Q\+String {\bfseries player\+Name}
+\item 
+\mbox{\Hypertarget{classBaseRun_a932f6e8210c02f26394436ee7da11438}\label{classBaseRun_a932f6e8210c02f26394436ee7da11438}} 
+unsigned long {\bfseries datetime}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBaseRun_a4aa9294541f9cc16a302f3c3ba9abbe1}\label{classBaseRun_a4aa9294541f9cc16a302f3c3ba9abbe1}} 
+\index{BaseRun@{BaseRun}!BaseRun@{BaseRun}}
+\index{BaseRun@{BaseRun}!BaseRun@{BaseRun}}
+\doxysubsubsection{\texorpdfstring{BaseRun()}{BaseRun()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Base\+Run\+::\+Base\+Run (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Initializes a run from its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Run ID. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBaseRun_aada59072ac7187c470433c4270929134}\label{classBaseRun_aada59072ac7187c470433c4270929134}} 
+\index{BaseRun@{BaseRun}!BaseRun@{BaseRun}}
+\index{BaseRun@{BaseRun}!BaseRun@{BaseRun}}
+\doxysubsubsection{\texorpdfstring{BaseRun()}{BaseRun()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Base\+Run\+::\+Base\+Run (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Initializes a run from its path in the game subsystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Run path. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBaseRun_a8e79c51565b035d3dee8683175fb56d0}\label{classBaseRun_a8e79c51565b035d3dee8683175fb56d0}} 
+\index{BaseRun@{BaseRun}!lessThan@{lessThan}}
+\index{lessThan@{lessThan}!BaseRun@{BaseRun}}
+\doxysubsubsection{\texorpdfstring{lessThan()}{lessThan()}}
+{\footnotesize\ttfamily virtual bool Base\+Run\+::less\+Than (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBaseRun}{Base\+Run}} $\ast$}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Defines a way to evaluate two runs in order to place them on a leaderboard. Must be overridden by game-\/specific runs to compare game-\/specific runs that might weigh game attributes differently. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The other run to compare it with. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classReversiRun_a796732a8f33dd5d837fb855fd0da6d37}{Reversi\+Run}}, and \mbox{\hyperlink{classKillCovidRun_a5f3eb56459b9d813e407998031566400}{Kill\+Covid\+Run}}.
+
+\mbox{\Hypertarget{classBaseRun_a24235e788d15486e789cfcd82b991c52}\label{classBaseRun_a24235e788d15486e789cfcd82b991c52}} 
+\index{BaseRun@{BaseRun}!setDateTime@{setDateTime}}
+\index{setDateTime@{setDateTime}!BaseRun@{BaseRun}}
+\doxysubsubsection{\texorpdfstring{setDateTime()}{setDateTime()}}
+{\footnotesize\ttfamily void Base\+Run\+::set\+Date\+Time (\begin{DoxyParamCaption}\item[{const Q\+Date\+Time \&}]{dt }\end{DoxyParamCaption})}
+
+
+
+Sets the datetime at which the run was played. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Datetime to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBaseRun_ab7b197c5255fb85761a6c8aa74ea816e}\label{classBaseRun_ab7b197c5255fb85761a6c8aa74ea816e}} 
+\index{BaseRun@{BaseRun}!setId@{setId}}
+\index{setId@{setId}!BaseRun@{BaseRun}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void Base\+Run\+::set\+Id (\begin{DoxyParamCaption}\item[{int}]{\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Sets the Run ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+id} & ID to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBaseRun_a74e324f3efd252760afba66766b96bfd}\label{classBaseRun_a74e324f3efd252760afba66766b96bfd}} 
+\index{BaseRun@{BaseRun}!setPath@{setPath}}
+\index{setPath@{setPath}!BaseRun@{BaseRun}}
+\doxysubsubsection{\texorpdfstring{setPath()}{setPath()}}
+{\footnotesize\ttfamily void Base\+Run\+::set\+Path (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{new\+Path }\end{DoxyParamCaption})}
+
+
+
+Sets the Run path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Path} & Path to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBaseRun_a8e113f1e1910722235d9881f458d3952}\label{classBaseRun_a8e113f1e1910722235d9881f458d3952}} 
+\index{BaseRun@{BaseRun}!setPlayerName@{setPlayerName}}
+\index{setPlayerName@{setPlayerName}!BaseRun@{BaseRun}}
+\doxysubsubsection{\texorpdfstring{setPlayerName()}{setPlayerName()}}
+{\footnotesize\ttfamily void Base\+Run\+::set\+Player\+Name (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{player\+Name }\end{DoxyParamCaption})}
+
+
+
+Sets the player name who is associated with this run. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Name} & The new player name. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/shared/\mbox{\hyperlink{baserun_8h}{baserun.\+h}}\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/shared/\mbox{\hyperlink{baserun_8cpp}{baserun.\+cpp}}\end{DoxyCompactItemize}

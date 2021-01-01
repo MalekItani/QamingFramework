@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['readobject_127',['readObject',['../classJsonIO.html#a827cef610490be364aace2638a698a95',1,'JsonIO']]],
+  ['rebase_128',['Rebase',['../classCursor.html#a33c62a6a9cd3d0342197dcff284898db',1,'Cursor']]],
+  ['registeraccount_129',['registerAccount',['../classregisterAccountWindow.html#a826151d8bb47c8fd447afad960941c70',1,'registerAccountWindow']]],
+  ['registeraccountwindow_130',['registerAccountWindow',['../classregisterAccountWindow.html',1,'']]],
+  ['registeraccountwindow_2ecpp_131',['registeraccountwindow.cpp',['../registeraccountwindow_8cpp.html',1,'']]],
+  ['registeraccountwindow_2eh_132',['registeraccountwindow.h',['../registeraccountwindow_8h.html',1,'']]],
+  ['resetwindow_133',['resetWindow',['../classKillCovid__19Window.html#a9e3582d07d3d778a625cdc02b2df5fdc',1,'KillCovid_19Window::resetWindow()'],['../classReversiWindow.html#a37157d2f7be93d40930d6d3305e70cac',1,'ReversiWindow::resetWindow()']]],
+  ['resizeevent_134',['resizeEvent',['../classKillCovid__19View.html#a41a82f137af1037348df6a0920a2e058',1,'KillCovid_19View::resizeEvent()'],['../classReversiView.html#a0eb53e649e618968045fb806d0df3aa1',1,'ReversiView::resizeEvent()']]],
+  ['reversiplayerwidget_135',['ReversiPlayerWidget',['../classReversiPlayerWidget.html',1,'']]],
+  ['reversiplayerwidget_2ecpp_136',['reversiplayerwidget.cpp',['../reversiplayerwidget_8cpp.html',1,'']]],
+  ['reversiplayerwidget_2eh_137',['reversiplayerwidget.h',['../reversiplayerwidget_8h.html',1,'']]],
+  ['reversirun_138',['ReversiRun',['../classReversiRun.html',1,'ReversiRun'],['../classReversiRun.html#a9f685addb17d591803bbbbe27600a221',1,'ReversiRun::ReversiRun()']]],
+  ['reversirun_2ecpp_139',['reversirun.cpp',['../reversirun_8cpp.html',1,'']]],
+  ['reversirun_2eh_140',['reversirun.h',['../reversirun_8h.html',1,'']]],
+  ['reversiscene_141',['ReversiScene',['../classReversiScene.html',1,'']]],
+  ['reversiscene_2ecpp_142',['reversiscene.cpp',['../reversiscene_8cpp.html',1,'']]],
+  ['reversiscene_2eh_143',['reversiscene.h',['../reversiscene_8h.html',1,'']]],
+  ['reversistatswidget_144',['ReversiStatsWidget',['../classReversiStatsWidget.html',1,'']]],
+  ['reversistatswidget_2ecpp_145',['reversistatswidget.cpp',['../reversistatswidget_8cpp.html',1,'']]],
+  ['reversistatswidget_2eh_146',['reversistatswidget.h',['../reversistatswidget_8h.html',1,'']]],
+  ['reversiview_147',['ReversiView',['../classReversiView.html',1,'']]],
+  ['reversiview_2ecpp_148',['reversiview.cpp',['../reversiview_8cpp.html',1,'']]],
+  ['reversiview_2eh_149',['reversiview.h',['../reversiview_8h.html',1,'']]],
+  ['reversiwindow_150',['ReversiWindow',['../classReversiWindow.html',1,'']]],
+  ['reversiwindow_2ecpp_151',['reversiwindow.cpp',['../reversiwindow_8cpp.html',1,'']]]
+];

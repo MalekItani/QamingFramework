@@ -1,9 +1,15 @@
 #include "user.h"
+#include "Utils/jsonio.h"
+
 #include <QJsonObject>
-#include <QFile>
-#include <QJsonDocument>
 #include <QDir>
 
+
+/**
+* \file user.cpp
+* \brief Implementation of the User class.
+* \author Malek Itani
+*/
 
 User::User(){
 
@@ -27,24 +33,14 @@ int User::toJSON(){
 
     userJsonObject["dateOfBirth"] = dateOfBirthJsonObject;
 
-    QJsonDocument document(userJsonObject);
-    QDir dir;
-    dir.mkpath("../QamingFramework/accounts/user_data");
+    QString filename = "../accounts/user_data/" + username + ".json";
 
-    QString filename = "../QamingFramework/accounts/user_data/" + username + ".json";
-
-    QFile userFile(filename);
-    if(userFile.open(QIODevice::WriteOnly)){
-        userFile.write(document.toJson());
-        userFile.close();
-        return 0;
-    }
-    return 1;
+    return JsonIO::writeObject(userJsonObject, filename);
 }
 
 // Initializes a guest user (i.e. user with default properties)
 int User::fromJSON(){
-    if(!QFile::exists("../QamingFramerwork/accounts/" + username + ".json")){
+    if(!QFile::exists("../accounts/" + username + ".json")){
         username = "Guest";
         password="";
         firstName = "";
@@ -59,30 +55,30 @@ int User::fromJSON(){
 
 // Initializes a user from username or password
 int User::fromJSON(QString username, QString password){
-    QFile userFile("../QamingFramework/accounts/user_data/" + username + ".json");
-    if (userFile.open(QIODevice::ReadOnly)) {
-        QByteArray data = userFile.readAll();
-        userFile.close();
-        QJsonDocument loadDoc(QJsonDocument::fromJson(data));
-        QJsonObject userJsonObject = loadDoc.object();
+    QString path = "../accounts/user_data/" + username + ".json";
 
-        if(userJsonObject["password"] == password){
-            this->username = userJsonObject["username"].toString();
-            this->password = userJsonObject["password"].toString();
-            this->firstName = userJsonObject["firstName"].toString();
-            this->lastName = userJsonObject["lastName"].toString();
-            this->profilePicturePath = userJsonObject["pathToProfilePic"].toString();
-            this->gender = userJsonObject["gender"].toInt();
+    QJsonObject userJsonObject;
+    int errorCode = JsonIO::readObject(userJsonObject, path);
 
-            QJsonObject dateOfBirthJsonObject = userJsonObject["dateOfBirth"].toObject();
-            this->dateOfBirth = QDate(dateOfBirthJsonObject["year"].toInt(),
-                                dateOfBirthJsonObject["month"].toInt(),
-                                dateOfBirthJsonObject["day"].toInt());
-            return 0;
-        }
-        return 2;
+    if(errorCode != JsonIO::JSON_SUCCESS){
+        return USER_INVALID_USERNAME;
     }
-    return 1;
+    else if(userJsonObject["password"] != password){
+        return USER_INVALID_PASSWORD;
+    }else{
+        this->username = userJsonObject["username"].toString();
+        this->password = userJsonObject["password"].toString();
+        this->firstName = userJsonObject["firstName"].toString();
+        this->lastName = userJsonObject["lastName"].toString();
+        this->profilePicturePath = userJsonObject["pathToProfilePic"].toString();
+        this->gender = userJsonObject["gender"].toInt();
+
+        QJsonObject dateOfBirthJsonObject = userJsonObject["dateOfBirth"].toObject();
+        this->dateOfBirth = QDate(dateOfBirthJsonObject["year"].toInt(),
+                            dateOfBirthJsonObject["month"].toInt(),
+                            dateOfBirthJsonObject["day"].toInt());
+        return USER_LOGIN_SUCCESS;
+    }
 }
 
 QString User::getFirstName(){

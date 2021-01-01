@@ -1,0 +1,68 @@
+\hypertarget{classLeaderboard}{}\doxysection{Leaderboard Class Reference}
+\label{classLeaderboard}\index{Leaderboard@{Leaderboard}}
+Inheritance diagram for Leaderboard\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLeaderboard}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classLeaderboard_a04fa5645e73d991110aa5ee8fc8e5c59}{add\+Run}} (\mbox{\hyperlink{classBaseRun}{Base\+Run}} $\ast$run)
+\begin{DoxyCompactList}\small\item\em Attempts to add a Run to the \mbox{\hyperlink{classLeaderboard}{Leaderboard}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLeaderboard_afe4283cbf7963043a2ad1077a7cb34c0}\label{classLeaderboard_afe4283cbf7963043a2ad1077a7cb34c0}} 
+void \mbox{\hyperlink{classLeaderboard_afe4283cbf7963043a2ad1077a7cb34c0}{save}} ()
+\begin{DoxyCompactList}\small\item\em Saves a \mbox{\hyperlink{classLeaderboard}{Leaderboard}} to the framework subsystem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Run\+Type $>$ }\\static \mbox{\hyperlink{classLeaderboard}{Leaderboard}} $\ast$ \mbox{\hyperlink{classLeaderboard_a136440670d1aaa5d05bfa3ef221abb2e}{build}} (const Q\+String \&game\+Base\+Path, int size)
+\begin{DoxyCompactList}\small\item\em Builds the leaderboard of a certain type of run. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLeaderboard_a04fa5645e73d991110aa5ee8fc8e5c59}\label{classLeaderboard_a04fa5645e73d991110aa5ee8fc8e5c59}} 
+\index{Leaderboard@{Leaderboard}!addRun@{addRun}}
+\index{addRun@{addRun}!Leaderboard@{Leaderboard}}
+\doxysubsubsection{\texorpdfstring{addRun()}{addRun()}}
+{\footnotesize\ttfamily bool Leaderboard\+::add\+Run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBaseRun}{Base\+Run}} $\ast$}]{run }\end{DoxyParamCaption})}
+
+
+
+Attempts to add a Run to the \mbox{\hyperlink{classLeaderboard}{Leaderboard}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em run} & The Run to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the Run is good enough to place on the \mbox{\hyperlink{classLeaderboard}{Leaderboard}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLeaderboard_a136440670d1aaa5d05bfa3ef221abb2e}\label{classLeaderboard_a136440670d1aaa5d05bfa3ef221abb2e}} 
+\index{Leaderboard@{Leaderboard}!build@{build}}
+\index{build@{build}!Leaderboard@{Leaderboard}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily template$<$typename Run\+Type $>$ \\
+static \mbox{\hyperlink{classLeaderboard}{Leaderboard}}$\ast$ Leaderboard\+::build (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{game\+Base\+Path,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Builds the leaderboard of a certain type of run. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Run\+Type} & The type of \mbox{\hyperlink{classBaseRun}{Base\+Run}} that the profile should use. This should be a Run class that inherits from \mbox{\hyperlink{classBaseRun}{Base\+Run}}. \\
+\hline
+{\em game\+Base\+Path} & The path to where the specific game files are located. \\
+\hline
+{\em size} & Maximum size of the leaderboard. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/shared/\mbox{\hyperlink{leaderboard_8h}{leaderboard.\+h}}\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/shared/\mbox{\hyperlink{leaderboard_8cpp}{leaderboard.\+cpp}}\end{DoxyCompactItemize}

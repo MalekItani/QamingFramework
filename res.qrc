@@ -1,6 +1,22 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-<qresource>
-<file>media/icons/edit_account.png</file>
-</qresource>
+<RCC>
+    <qresource prefix="/">
+        <file>media/icons/edit_account.png</file>
+        <file>KillCovid-19/res/virus_medium.png</file>
+        <file>KillCovid-19/res/virus_large.png</file>
+        <file>KillCovid-19/res/syringe.png</file>
+        <file>KillCovid-19/res/cursor.png</file>
+        <file>KillCovid-19/res/arrow.jpg</file>
+        <file>KillCovid-19/res/yellowGameBg.jpg</file>
+        <file>KillCovid-19/res/blueBg.jpg</file>
+        <file>KillCovid-19/res/virus_small.png</file>
+        <file>KillCovid-19/res/virus_small_smashed.png</file>
+        <file>KillCovid-19/res/virus_medium_smashed.png</file>
+        <file>KillCovid-19/res/virus_large_smashed.png</file>
+        <file>KillCovid-19/res/squish_sound.wav</file>
+        <file>KillCovid-19/res/shoot_sound.wav</file>
+        <file>Reversi/res/moon.png</file>
+        <file>Reversi/res/sun.png</file>
+        <file>Reversi/res/mainMenu.jpeg</file>
+        <file>Reversi/res/board.jpg</file>
+    </qresource>
 </RCC>

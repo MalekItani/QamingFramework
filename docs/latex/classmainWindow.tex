@@ -1,0 +1,108 @@
+\hypertarget{classmainWindow}{}\doxysection{main\+Window Class Reference}
+\label{classmainWindow}\index{mainWindow@{mainWindow}}
+Inheritance diagram for main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmainWindow}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmainWindow_acecfc7a8689993e5b86ccfd4717cb533}\label{classmainWindow_acecfc7a8689993e5b86ccfd4717cb533}} 
+void \mbox{\hyperlink{classmainWindow_acecfc7a8689993e5b86ccfd4717cb533}{open\+Register\+Account\+Form}} ()
+\begin{DoxyCompactList}\small\item\em Opens the registration window for new users to create accounts. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmainWindow_a831c1a01749275ed96f6afbe820165ef}\label{classmainWindow_a831c1a01749275ed96f6afbe820165ef}} 
+void \mbox{\hyperlink{classmainWindow_a831c1a01749275ed96f6afbe820165ef}{open\+Login\+Form}} ()
+\begin{DoxyCompactList}\small\item\em Opens the login window for returning users to login to their accounts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmainWindow_a427500498cb9210d788890eb95d5bc67}{update\+Layout\+With\+User\+Info}} (\mbox{\hyperlink{classUser}{User}} $\ast$user)
+\begin{DoxyCompactList}\small\item\em Updates the layout with a specific user\textquotesingle{}s info once they have logged in. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmainWindow_adeed480100a1450f940fdea3ce9690de}\label{classmainWindow_adeed480100a1450f940fdea3ce9690de}} 
+void \mbox{\hyperlink{classmainWindow_adeed480100a1450f940fdea3ce9690de}{execute\+Logout}} ()
+\begin{DoxyCompactList}\small\item\em Logs the user out. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmainWindow_a221fd3b2a78f6c30649c17fbe5740015}\label{classmainWindow_a221fd3b2a78f6c30649c17fbe5740015}} 
+void \mbox{\hyperlink{classmainWindow_a221fd3b2a78f6c30649c17fbe5740015}{login\+As\+Guest}} ()
+\begin{DoxyCompactList}\small\item\em Logs the user as the default (Guest) user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmainWindow_a11e8fadf0149355e60e4ce97275c5eeb}\label{classmainWindow_a11e8fadf0149355e60e4ce97275c5eeb}} 
+void \mbox{\hyperlink{classmainWindow_a11e8fadf0149355e60e4ce97275c5eeb}{Start\+Kill\+Covid\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Launches the Kill\+Covid19 game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmainWindow_acc24ed2cd861726ea4337ae9fc83614f}\label{classmainWindow_acc24ed2cd861726ea4337ae9fc83614f}} 
+void \mbox{\hyperlink{classmainWindow_acc24ed2cd861726ea4337ae9fc83614f}{Start\+Reversi\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Launches the Reversie game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmainWindow_a6a1ea650fbd7f38df151a8b43b0459bb}\label{classmainWindow_a6a1ea650fbd7f38df151a8b43b0459bb}} 
+void \mbox{\hyperlink{classmainWindow_a6a1ea650fbd7f38df151a8b43b0459bb}{on\+Kill\+Covid19\+Finish}} ()
+\begin{DoxyCompactList}\small\item\em Performs post-\/game functionality for Kill\+Covid19. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmainWindow_a91e462d66aab5309bb41fb535ab7fe40}\label{classmainWindow_a91e462d66aab5309bb41fb535ab7fe40}} 
+void \mbox{\hyperlink{classmainWindow_a91e462d66aab5309bb41fb535ab7fe40}{on\+Reversi\+Finish}} ()
+\begin{DoxyCompactList}\small\item\em Performs post-\/game functionality for Reversi. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmainWindow_afc9d5ea20920dc53a61c418edf245bc3}\label{classmainWindow_afc9d5ea20920dc53a61c418edf245bc3}} 
+void \mbox{\hyperlink{classmainWindow_afc9d5ea20920dc53a61c418edf245bc3}{swap\+Layout}} (int)
+\begin{DoxyCompactList}\small\item\em Swaps between login layout and games display layout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmainWindow_a465a3b796ef1f4522e3a1cd13f4f30d8}{update\+Username\+Label}} (const Q\+String \&username)
+\begin{DoxyCompactList}\small\item\em Updates the username label. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmainWindow_a6be8dcfd6226ebf0ea923c26692b8662}{update\+User\+Profile\+Picture}} (const Q\+Pixmap \&pixmap)
+\begin{DoxyCompactList}\small\item\em Updates the displayed picture for the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmainWindow_aeac52e1db2d23d399e59332dd291e1df}\label{classmainWindow_aeac52e1db2d23d399e59332dd291e1df}} 
+{\bfseries main\+Window} (Q\+Widget $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmainWindow_a427500498cb9210d788890eb95d5bc67}\label{classmainWindow_a427500498cb9210d788890eb95d5bc67}} 
+\index{mainWindow@{mainWindow}!updateLayoutWithUserInfo@{updateLayoutWithUserInfo}}
+\index{updateLayoutWithUserInfo@{updateLayoutWithUserInfo}!mainWindow@{mainWindow}}
+\doxysubsubsection{\texorpdfstring{updateLayoutWithUserInfo}{updateLayoutWithUserInfo}}
+{\footnotesize\ttfamily void main\+Window\+::update\+Layout\+With\+User\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUser}{User}} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Updates the layout with a specific user\textquotesingle{}s info once they have logged in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Pointer to the user to update the layout with. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmainWindow_a465a3b796ef1f4522e3a1cd13f4f30d8}\label{classmainWindow_a465a3b796ef1f4522e3a1cd13f4f30d8}} 
+\index{mainWindow@{mainWindow}!updateUsernameLabel@{updateUsernameLabel}}
+\index{updateUsernameLabel@{updateUsernameLabel}!mainWindow@{mainWindow}}
+\doxysubsubsection{\texorpdfstring{updateUsernameLabel}{updateUsernameLabel}}
+{\footnotesize\ttfamily void main\+Window\+::update\+Username\+Label (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{username }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Updates the username label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Username to place on the label. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmainWindow_a6be8dcfd6226ebf0ea923c26692b8662}\label{classmainWindow_a6be8dcfd6226ebf0ea923c26692b8662}} 
+\index{mainWindow@{mainWindow}!updateUserProfilePicture@{updateUserProfilePicture}}
+\index{updateUserProfilePicture@{updateUserProfilePicture}!mainWindow@{mainWindow}}
+\doxysubsubsection{\texorpdfstring{updateUserProfilePicture}{updateUserProfilePicture}}
+{\footnotesize\ttfamily void main\+Window\+::update\+User\+Profile\+Picture (\begin{DoxyParamCaption}\item[{const Q\+Pixmap \&}]{pixmap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Updates the displayed picture for the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixmap} & The pixmap for the user\textquotesingle{}s picture. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/main/\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/build/moc\+\_\+mainwindow.\+cpp\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/main/mainwindow.\+cpp\end{DoxyCompactItemize}

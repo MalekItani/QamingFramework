@@ -1,0 +1,137 @@
+\hypertarget{classKillCovid__19Scene}{}\doxysection{Kill\+Covid\+\_\+19\+Scene Class Reference}
+\label{classKillCovid__19Scene}\index{KillCovid\_19Scene@{KillCovid\_19Scene}}
+Inheritance diagram for Kill\+Covid\+\_\+19\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKillCovid__19Scene}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a566c115008fa79e0ac097cec15a930e6}\label{classKillCovid__19Scene_a566c115008fa79e0ac097cec15a930e6}} 
+void \mbox{\hyperlink{classKillCovid__19Scene_a566c115008fa79e0ac097cec15a930e6}{Create\+Cursor}} ()
+\begin{DoxyCompactList}\small\item\em creates and initializes the cursor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a18296e05804f0dca033bc43d3954ecdc}\label{classKillCovid__19Scene_a18296e05804f0dca033bc43d3954ecdc}} 
+void \mbox{\hyperlink{classKillCovid__19Scene_a18296e05804f0dca033bc43d3954ecdc}{Create\+Virus}} ()
+\begin{DoxyCompactList}\small\item\em creates and initializes the virus \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a727af82971d348a2b2e72a08523be447}\label{classKillCovid__19Scene_a727af82971d348a2b2e72a08523be447}} 
+void \mbox{\hyperlink{classKillCovid__19Scene_a727af82971d348a2b2e72a08523be447}{Delete\+Hit\+Virus}} ()
+\begin{DoxyCompactList}\small\item\em deletes the virus that got hit with the cursor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a3e3b6503a7cc35c5e689fddbd2a68da2}\label{classKillCovid__19Scene_a3e3b6503a7cc35c5e689fddbd2a68da2}} 
+void \mbox{\hyperlink{classKillCovid__19Scene_a3e3b6503a7cc35c5e689fddbd2a68da2}{game\+Over}} (\mbox{\hyperlink{classKillCovidRun}{Kill\+Covid\+Run}} $\ast$run)
+\begin{DoxyCompactList}\small\item\em signal emitted when the game ends \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a491f3dc78c5f31cf160edd3fe295d26d}\label{classKillCovid__19Scene_a491f3dc78c5f31cf160edd3fe295d26d}} 
+\mbox{\hyperlink{classKillCovid__19Scene_a491f3dc78c5f31cf160edd3fe295d26d}{Kill\+Covid\+\_\+19\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em kill covid 19 game constructor, responsible for initializing the scene \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKillCovid__19Scene_a684ef135c71387ede0f1a532281d6eba}{Start\+Game}} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&\+\_\+viruses\+Postions)
+\begin{DoxyCompactList}\small\item\em starts the game by changing the background, and showing the rotating cursors and makes the viruses starts falling. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a153200ae1dc6cc419b7a5828e79d86d4}\label{classKillCovid__19Scene_a153200ae1dc6cc419b7a5828e79d86d4}} 
+void \mbox{\hyperlink{classKillCovid__19Scene_a153200ae1dc6cc419b7a5828e79d86d4}{Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the main menu of the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKillCovid__19Scene_a647d0c9090333bb91a534a2e9da3425e}{inialize\+Text\+Item}} (Q\+Graphics\+Text\+Item $\ast$\&item, int x, int y)
+\begin{DoxyCompactList}\small\item\em initializes a graphics text item and adds it to the scene \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a8652a136e6ece7d0a3d8d183f06e5f76}\label{classKillCovid__19Scene_a8652a136e6ece7d0a3d8d183f06e5f76}} 
+void \mbox{\hyperlink{classKillCovid__19Scene_a8652a136e6ece7d0a3d8d183f06e5f76}{Fill\+Labels}} ()
+\begin{DoxyCompactList}\small\item\em initializes the labels on the scene \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a4def596d06191c1912d54aec47373043}\label{classKillCovid__19Scene_a4def596d06191c1912d54aec47373043}} 
+void \mbox{\hyperlink{classKillCovid__19Scene_a4def596d06191c1912d54aec47373043}{End\+Game}} (bool win)
+\begin{DoxyCompactList}\small\item\em makes the necessary updates and deletes when the game ends \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a99372de6914250a4bd93bcf12a1ab217}\label{classKillCovid__19Scene_a99372de6914250a4bd93bcf12a1ab217}} 
+void \mbox{\hyperlink{classKillCovid__19Scene_a99372de6914250a4bd93bcf12a1ab217}{key\+Press\+Event}} (Q\+Key\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em detects when a key is pressed to shoot the cursor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a22fe5f74b0ce6055d06e65ef2b53d9bc}\label{classKillCovid__19Scene_a22fe5f74b0ce6055d06e65ef2b53d9bc}} 
+Q\+Graphics\+Text\+Item $\ast$ {\bfseries misses}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_af4b0ebd7926ecbbb9124ece9b6161caf}\label{classKillCovid__19Scene_af4b0ebd7926ecbbb9124ece9b6161caf}} 
+Q\+Graphics\+Text\+Item $\ast$ {\bfseries small\+Viruses}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a828fcfaaf2d14c02b648d7631b1f7790}\label{classKillCovid__19Scene_a828fcfaaf2d14c02b648d7631b1f7790}} 
+Q\+Graphics\+Text\+Item $\ast$ {\bfseries medium\+Viruses}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a38017b5f7c29d91616cb612d9122bf2e}\label{classKillCovid__19Scene_a38017b5f7c29d91616cb612d9122bf2e}} 
+Q\+Graphics\+Text\+Item $\ast$ {\bfseries large\+Viruses}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a20e91d99001cfda2d583a8581d6d581f}\label{classKillCovid__19Scene_a20e91d99001cfda2d583a8581d6d581f}} 
+Q\+Graphics\+Text\+Item $\ast$ {\bfseries score}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a63d664d220ec611410b63359e2aff3f3}\label{classKillCovid__19Scene_a63d664d220ec611410b63359e2aff3f3}} 
+int {\bfseries misses\+Cnt}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_ae6bc4a9ee768ed79c7e929a92038ab0a}\label{classKillCovid__19Scene_ae6bc4a9ee768ed79c7e929a92038ab0a}} 
+int {\bfseries score\+Cnt}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a67b95e7b422e144fd6f204a8f727bd87}\label{classKillCovid__19Scene_a67b95e7b422e144fd6f204a8f727bd87}} 
+int {\bfseries killed\+Virus} =0
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a264be951556402496efdc5c6cb73f888}\label{classKillCovid__19Scene_a264be951556402496efdc5c6cb73f888}} 
+int {\bfseries virus\+Rolling\+Speed}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_ac6ec58d3f128867dc167487afc18ea48}\label{classKillCovid__19Scene_ac6ec58d3f128867dc167487afc18ea48}} 
+int {\bfseries viruses\+Cnts} \mbox{[}3\mbox{]} =\{0,0,0\}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_a8eeae1ab77fb92595b27bcef5bf51059}\label{classKillCovid__19Scene_a8eeae1ab77fb92595b27bcef5bf51059}} 
+bool {\bfseries game\+Ended} =false
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_af350c8780ebbdd185139bcca19a9017e}\label{classKillCovid__19Scene_af350c8780ebbdd185139bcca19a9017e}} 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ {\bfseries viruses\+Postions}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_ab77d0a69abcd97328d6dada4c857d633}\label{classKillCovid__19Scene_ab77d0a69abcd97328d6dada4c857d633}} 
+\mbox{\hyperlink{classCursor}{Cursor}} $\ast$ {\bfseries cursor}
+\item 
+\mbox{\Hypertarget{classKillCovid__19Scene_aafa90a93628d7d95a38c087f2a9972a1}\label{classKillCovid__19Scene_aafa90a93628d7d95a38c087f2a9972a1}} 
+\mbox{\hyperlink{classVirus}{Virus}} $\ast$ {\bfseries virus}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classKillCovid__19Scene_a647d0c9090333bb91a534a2e9da3425e}\label{classKillCovid__19Scene_a647d0c9090333bb91a534a2e9da3425e}} 
+\index{KillCovid\_19Scene@{KillCovid\_19Scene}!inializeTextItem@{inializeTextItem}}
+\index{inializeTextItem@{inializeTextItem}!KillCovid\_19Scene@{KillCovid\_19Scene}}
+\doxysubsubsection{\texorpdfstring{inializeTextItem()}{inializeTextItem()}}
+{\footnotesize\ttfamily void Kill\+Covid\+\_\+19\+Scene\+::inialize\+Text\+Item (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Text\+Item $\ast$\&}]{item,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+initializes a graphics text item and adds it to the scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & the text item to be initialized \\
+\hline
+{\em x} & the x position of the text item in the scene \\
+\hline
+{\em y} & the y position of the text item in the scene \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classKillCovid__19Scene_a684ef135c71387ede0f1a532281d6eba}\label{classKillCovid__19Scene_a684ef135c71387ede0f1a532281d6eba}} 
+\index{KillCovid\_19Scene@{KillCovid\_19Scene}!StartGame@{StartGame}}
+\index{StartGame@{StartGame}!KillCovid\_19Scene@{KillCovid\_19Scene}}
+\doxysubsubsection{\texorpdfstring{StartGame()}{StartGame()}}
+{\footnotesize\ttfamily void Kill\+Covid\+\_\+19\+Scene\+::\+Start\+Game (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{\+\_\+viruses\+Postions }\end{DoxyParamCaption})}
+
+
+
+starts the game by changing the background, and showing the rotating cursors and makes the viruses starts falling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+viruses\+Positions} & the starting positions of the falling viruses \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Kill\+Covid-\/19/\mbox{\hyperlink{killcovid19scene_8h}{killcovid19scene.\+h}}\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/build/moc\+\_\+killcovid19scene.\+cpp\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Kill\+Covid-\/19/killcovid19scene.\+cpp\end{DoxyCompactItemize}

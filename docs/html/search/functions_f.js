@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['save_364',['save',['../classGameProfile.html#a20d71a58b3d7117ded9f50d416262314',1,'GameProfile::save()'],['../classLeaderboard.html#afe4283cbf7963043a2ad1077a7cb34c0',1,'Leaderboard::save()']]],
+  ['scoreupdate_365',['scoreUpdate',['../classReversiScene.html#ac25b19b84186cfee2a2ddb8bc2e7ff7e',1,'ReversiScene::scoreUpdate()'],['../classReversiStatsWidget.html#a050604932a64683b029dea7a23642d1f',1,'ReversiStatsWidget::scoreUpdate()']]],
+  ['selectmap_366',['SelectMap',['../classKillCovid__19View.html#a58ba5a9b0be11db68bb133b66bf372bf',1,'KillCovid_19View']]],
+  ['setdateofbirth_367',['setDateOfBirth',['../classUser.html#adfa89c78ad9f91b669bc98a7aa769658',1,'User']]],
+  ['setdatetime_368',['setDateTime',['../classBaseRun.html#a24235e788d15486e789cfcd82b991c52',1,'BaseRun']]],
+  ['setfirstname_369',['setFirstName',['../classUser.html#a4579de6f32f31279f69d5b52872cfaf1',1,'User']]],
+  ['setgamescene_370',['setGameScene',['../classKillCovid__19View.html#a5b2ef85188056e845e7f3d832d9dc690',1,'KillCovid_19View::setGameScene()'],['../classReversiView.html#aac2a57b445b7664d708df22afeaa03ae',1,'ReversiView::setGameScene()']]],
+  ['setgender_371',['setGender',['../classUser.html#a09d51701124c964c2d51c1705fc3b288',1,'User']]],
+  ['setid_372',['setId',['../classBaseRun.html#ab7b197c5255fb85761a6c8aa74ea816e',1,'BaseRun']]],
+  ['setlastname_373',['setLastName',['../classUser.html#abbeb7429cf5290338435ddbe4c45bdb6',1,'User']]],
+  ['setleaderboard_374',['setLeaderboard',['../classKillCovid19LeaderboardWidget.html#ab35da84437926c4cb7f4ee5428dac6f4',1,'KillCovid19LeaderboardWidget']]],
+  ['setpassword_375',['setPassword',['../classUser.html#ad07669f102d4770321344ab24f4d9610',1,'User']]],
+  ['setpath_376',['setPath',['../classBaseRun.html#a74e324f3efd252760afba66766b96bfd',1,'BaseRun']]],
+  ['setplayername_377',['setPlayerName',['../classBaseRun.html#a8e113f1e1910722235d9881f458d3952',1,'BaseRun']]],
+  ['setprofilepicturepath_378',['setProfilePicturePath',['../classUser.html#a941e471a7dba1f3fb1af40dae626f207',1,'User']]],
+  ['setusername_379',['setUsername',['../classUser.html#a5b59ebe0af0760a04c00e69a3cb7d8fa',1,'User']]],
+  ['shoot_380',['Shoot',['../classCursor.html#afeb33682ddb8b38788a41f7fb3b8ab54',1,'Cursor']]],
+  ['shoothelper_381',['ShootHelper',['../classCursor.html#a7b6a10624f25b756241fc65484db4955',1,'Cursor']]],
+  ['showhelp_382',['showHelp',['../classKillCovid__19View.html#aa46006efe57041f3a407036c114a320f',1,'KillCovid_19View::showHelp()'],['../classReversiView.html#a84d8f5d33bf7e1916a6458b5cab8a79f',1,'ReversiView::showHelp()']]],
+  ['showsmashed_383',['ShowSmashed',['../classVirus.html#a82743bd861a1faf9fc626069bf2bd804',1,'Virus']]],
+  ['startgame_384',['StartGame',['../classKillCovid__19Scene.html#a684ef135c71387ede0f1a532281d6eba',1,'KillCovid_19Scene::StartGame()'],['../classKillCovid__19View.html#a48f4c62e6e0d7b6a4587470fb58140e9',1,'KillCovid_19View::StartGame()'],['../classReversiScene.html#a398027e8d4a8d0ee30a683952108c8a8',1,'ReversiScene::StartGame()'],['../classReversiView.html#accba2f4b63815feeba6fe34afe84182c',1,'ReversiView::StartGame()']]],
+  ['startkillcovidgame_385',['StartKillCovidGame',['../classmainWindow.html#a11e8fadf0149355e60e4ce97275c5eeb',1,'mainWindow']]],
+  ['startmoving_386',['StartMoving',['../classCursor.html#a1865e0bfbfff1fbdd6a7ed4fa4de69c6',1,'Cursor']]],
+  ['startreversigame_387',['StartReversiGame',['../classmainWindow.html#acc24ed2cd861726ea4337ae9fc83614f',1,'mainWindow']]],
+  ['swaplayout_388',['swapLayout',['../classmainWindow.html#afc9d5ea20920dc53a61c418edf245bc3',1,'mainWindow']]]
+];

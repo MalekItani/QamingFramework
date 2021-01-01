@@ -1,0 +1,61 @@
+\hypertarget{classReversiRun}{}\doxysection{Reversi\+Run Class Reference}
+\label{classReversiRun}\index{ReversiRun@{ReversiRun}}
+Inheritance diagram for Reversi\+Run\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classReversiRun}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classReversiRun_a9f685addb17d591803bbbbe27600a221}\label{classReversiRun_a9f685addb17d591803bbbbe27600a221}} 
+\mbox{\hyperlink{classReversiRun_a9f685addb17d591803bbbbe27600a221}{Reversi\+Run}} (int black, int white)
+\begin{DoxyCompactList}\small\item\em Initializes the Reversi run from the \# of black stones \& \# of white stones. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiRun_ad049994f0847421a8ed5a91ba1ae44a7}\label{classReversiRun_ad049994f0847421a8ed5a91ba1ae44a7}} 
+{\bfseries Reversi\+Run} (const Q\+String \&path)
+\item 
+\mbox{\Hypertarget{classReversiRun_a7bd34d854a12372adabd8ce2e585d687}\label{classReversiRun_a7bd34d854a12372adabd8ce2e585d687}} 
+int \mbox{\hyperlink{classReversiRun_a7bd34d854a12372adabd8ce2e585d687}{to\+Json}} () override
+\begin{DoxyCompactList}\small\item\em Defines the way to write the run attributes to J\+S\+ON. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiRun_ad5224a46b9cdc1370203035274a44029}\label{classReversiRun_ad5224a46b9cdc1370203035274a44029}} 
+int \mbox{\hyperlink{classReversiRun_ad5224a46b9cdc1370203035274a44029}{from\+Json}} () override
+\begin{DoxyCompactList}\small\item\em Defines the way to read the run attributes to J\+S\+ON. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiRun_a796732a8f33dd5d837fb855fd0da6d37}\label{classReversiRun_a796732a8f33dd5d837fb855fd0da6d37}} 
+bool \mbox{\hyperlink{classReversiRun_a796732a8f33dd5d837fb855fd0da6d37}{less\+Than}} (const \mbox{\hyperlink{classBaseRun}{Base\+Run}} $\ast$rhs) override
+\begin{DoxyCompactList}\small\item\em Defines the way to compare to Reversi-\/specific runs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiRun_a91f4ab0a661ab24323915f2b0d64a65f}\label{classReversiRun_a91f4ab0a661ab24323915f2b0d64a65f}} 
+int \mbox{\hyperlink{classReversiRun_a91f4ab0a661ab24323915f2b0d64a65f}{get\+Black\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of black stones. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiRun_a1b37fca0bb57dfaca5a7882d5e74e48d}\label{classReversiRun_a1b37fca0bb57dfaca5a7882d5e74e48d}} 
+int \mbox{\hyperlink{classReversiRun_a1b37fca0bb57dfaca5a7882d5e74e48d}{get\+White\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of white stones. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiRun_a98922f40a89a232ef02d8b2d6378cf99}\label{classReversiRun_a98922f40a89a232ef02d8b2d6378cf99}} 
+long \mbox{\hyperlink{classReversiRun_a98922f40a89a232ef02d8b2d6378cf99}{get\+Time\+Taken}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the time taken for player one (blacks) to finish. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classReversiRun_ab7ff38c6eb57af0abde1600bed98f672}{get\+Score}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the run score. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classReversiRun_ab7ff38c6eb57af0abde1600bed98f672}\label{classReversiRun_ab7ff38c6eb57af0abde1600bed98f672}} 
+\index{ReversiRun@{ReversiRun}!getScore@{getScore}}
+\index{getScore@{getScore}!ReversiRun@{ReversiRun}}
+\doxysubsubsection{\texorpdfstring{getScore()}{getScore()}}
+{\footnotesize\ttfamily int Reversi\+Run\+::get\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the run score. 
+
+Score is assumed to be \# of blacks -\/ \# of whites. 
+
+Implements \mbox{\hyperlink{classBaseRun_a76e88a4411f27b49f13592ee38c2d72e}{Base\+Run}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Reversi/\mbox{\hyperlink{reversirun_8h}{reversirun.\+h}}\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Reversi/\mbox{\hyperlink{reversirun_8cpp}{reversirun.\+cpp}}\end{DoxyCompactItemize}

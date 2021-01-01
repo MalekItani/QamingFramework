@@ -1,0 +1,80 @@
+\hypertarget{classReversiView}{}\doxysection{Reversi\+View Class Reference}
+\label{classReversiView}\index{ReversiView@{ReversiView}}
+Inheritance diagram for Reversi\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classReversiView}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classReversiView_accba2f4b63815feeba6fe34afe84182c}\label{classReversiView_accba2f4b63815feeba6fe34afe84182c}} 
+void \mbox{\hyperlink{classReversiView_accba2f4b63815feeba6fe34afe84182c}{Start\+Game}} ()
+\begin{DoxyCompactList}\small\item\em does the necessary initializations when the game starts \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiView_a6846d7ffa79882a2a8801704eeedff59}\label{classReversiView_a6846d7ffa79882a2a8801704eeedff59}} 
+void \mbox{\hyperlink{classReversiView_a6846d7ffa79882a2a8801704eeedff59}{Exit\+Game}} ()
+\begin{DoxyCompactList}\small\item\em does the necessary deletes and updates when the game ends \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiView_a84d8f5d33bf7e1916a6458b5cab8a79f}\label{classReversiView_a84d8f5d33bf7e1916a6458b5cab8a79f}} 
+void \mbox{\hyperlink{classReversiView_a84d8f5d33bf7e1916a6458b5cab8a79f}{show\+Help}} ()
+\begin{DoxyCompactList}\small\item\em shows how the game is played \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classReversiView_aac058a6e06b072d8a81c1f6407030b9a}\label{classReversiView_aac058a6e06b072d8a81c1f6407030b9a}} 
+void \mbox{\hyperlink{classReversiView_aac058a6e06b072d8a81c1f6407030b9a}{game\+Exited}} ()
+\begin{DoxyCompactList}\small\item\em signal emitted when the game ends \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classReversiView_a0eb53e649e618968045fb806d0df3aa1}\label{classReversiView_a0eb53e649e618968045fb806d0df3aa1}} 
+void \mbox{\hyperlink{classReversiView_a0eb53e649e618968045fb806d0df3aa1}{resize\+Event}} (Q\+Resize\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em fits the scene inside the view well \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReversiView_aac2a57b445b7664d708df22afeaa03ae}{set\+Game\+Scene}} (\mbox{\hyperlink{classReversiScene}{Reversi\+Scene}} $\ast$scene)
+\begin{DoxyCompactList}\small\item\em sets the game scene inside the view \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classReversiView_a6d6b53f88947ec1118bf6e0e53fa1ff3}\label{classReversiView_a6d6b53f88947ec1118bf6e0e53fa1ff3}} 
+void \mbox{\hyperlink{classReversiView_a6d6b53f88947ec1118bf6e0e53fa1ff3}{Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em main menu of the view \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classReversiView_a8551181509000c080f49b1c56620f49d}\label{classReversiView_a8551181509000c080f49b1c56620f49d}} 
+Q\+Push\+Button $\ast$ {\bfseries exit}
+\item 
+\mbox{\Hypertarget{classReversiView_a27337e48b136af56536c214be1d7678b}\label{classReversiView_a27337e48b136af56536c214be1d7678b}} 
+Q\+Push\+Button $\ast$ {\bfseries enter\+Game}
+\item 
+\mbox{\Hypertarget{classReversiView_a36eba946e100f09638fbeca8f9bb4604}\label{classReversiView_a36eba946e100f09638fbeca8f9bb4604}} 
+Q\+Push\+Button $\ast$ {\bfseries game\+Settings}
+\item 
+\mbox{\Hypertarget{classReversiView_ab21bde840f94282b51104a79f43dca62}\label{classReversiView_ab21bde840f94282b51104a79f43dca62}} 
+Q\+Push\+Button $\ast$ {\bfseries how\+To\+Play}
+\item 
+\mbox{\Hypertarget{classReversiView_abdd869712a530256836afc793a102f96}\label{classReversiView_abdd869712a530256836afc793a102f96}} 
+Q\+Label $\ast$ {\bfseries title\+Label}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classReversiView_aac2a57b445b7664d708df22afeaa03ae}\label{classReversiView_aac2a57b445b7664d708df22afeaa03ae}} 
+\index{ReversiView@{ReversiView}!setGameScene@{setGameScene}}
+\index{setGameScene@{setGameScene}!ReversiView@{ReversiView}}
+\doxysubsubsection{\texorpdfstring{setGameScene()}{setGameScene()}}
+{\footnotesize\ttfamily void Reversi\+View\+::set\+Game\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classReversiScene}{Reversi\+Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+
+
+sets the game scene inside the view 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & the scene to be added to the view \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Reversi/\mbox{\hyperlink{reversiview_8h}{reversiview.\+h}}\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/build/moc\+\_\+reversiview.\+cpp\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/\+Reversi/\mbox{\hyperlink{reversiview_8cpp}{reversiview.\+cpp}}\end{DoxyCompactItemize}

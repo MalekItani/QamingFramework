@@ -1,5 +1,11 @@
 #include "profilepicturechooser.h"
 
+/**
+* \file profilepicturechooser.cpp
+* \brief The implementation of the ProfilePictureChooser
+* \author Malek Itani
+*/
+
 ProfilePictureChooser::ProfilePictureChooser(QWidget *parent) : QWidget(parent){
 
     profilePictureChooserLayout = new QHBoxLayout();

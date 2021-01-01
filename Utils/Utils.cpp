@@ -2,7 +2,13 @@
 #include<regex>
 #include<qpassworddigestor.h>
 #include <QFileInfo>
-
+/**
+* \file Utils.cpp
+* \brief Utils class defintion
+*
+* Contains the iniatialization of the Utils class and and the implementation of its functions.
+* \author Khalil Baydoun
+*/
 Utils::Utils()
 {
 }
@@ -62,4 +68,13 @@ void Utils::Popup(QString title, QString text){
     errorBox->setWindowTitle(title);
     errorBox->setText(text);
     errorBox->exec();
+}
+
+void  Utils::delay(int milliSeconds)
+{
+    QEventLoop loop;
+    QTimer t;
+    t.connect(&t, &QTimer::timeout, &loop, &QEventLoop::quit);
+    t.start(milliSeconds);
+    loop.exec();
 }

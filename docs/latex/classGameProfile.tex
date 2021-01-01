@@ -1,0 +1,74 @@
+\hypertarget{classGameProfile}{}\doxysection{Game\+Profile Class Reference}
+\label{classGameProfile}\index{GameProfile@{GameProfile}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGameProfile_a6c164dd26feea017cc33c5efbdeeabe7}{add\+Run}} (\mbox{\hyperlink{classBaseRun}{Base\+Run}} $\ast$run)
+\begin{DoxyCompactList}\small\item\em Inserts a run into the user\textquotesingle{}s profile. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameProfile_a20d71a58b3d7117ded9f50d416262314}\label{classGameProfile_a20d71a58b3d7117ded9f50d416262314}} 
+void \mbox{\hyperlink{classGameProfile_a20d71a58b3d7117ded9f50d416262314}{save}} ()
+\begin{DoxyCompactList}\small\item\em Saves the user\textquotesingle{}s current \mbox{\hyperlink{classGameProfile}{Game\+Profile}} to a J\+S\+ON file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameProfile_a286d83c9e4175c8088c9cd7e590c6aa2}\label{classGameProfile_a286d83c9e4175c8088c9cd7e590c6aa2}} 
+\mbox{\hyperlink{classLeaderboard}{Leaderboard}} $\ast$ \mbox{\hyperlink{classGameProfile_a286d83c9e4175c8088c9cd7e590c6aa2}{get\+Leaderboard}} ()
+\begin{DoxyCompactList}\small\item\em Returns the game\textquotesingle{}s \mbox{\hyperlink{classLeaderboard}{Leaderboard}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameProfile_aade6628fc932857e8b8c9516afe408d4}\label{classGameProfile_aade6628fc932857e8b8c9516afe408d4}} 
+\mbox{\hyperlink{classBaseRun}{Base\+Run}} $\ast$ \mbox{\hyperlink{classGameProfile_aade6628fc932857e8b8c9516afe408d4}{get\+Best\+Run}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current user\textquotesingle{}s best Run. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameProfile_a3bfd4cac2b1dcd19c141f7410b4ac9b1}\label{classGameProfile_a3bfd4cac2b1dcd19c141f7410b4ac9b1}} 
+\mbox{\hyperlink{classBaseRun}{Base\+Run}} $\ast$ \mbox{\hyperlink{classGameProfile_a3bfd4cac2b1dcd19c141f7410b4ac9b1}{get\+Last\+Run}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current user\textquotesingle{}s last Run. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameProfile_a689943037e243bf91561ec12d4d52f95}\label{classGameProfile_a689943037e243bf91561ec12d4d52f95}} 
+int \mbox{\hyperlink{classGameProfile_a689943037e243bf91561ec12d4d52f95}{get\+Number\+Of\+Games\+Played}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of games the user has played. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameProfile_a593ee1b205e56cf89a8a54d02cd61ecc}\label{classGameProfile_a593ee1b205e56cf89a8a54d02cd61ecc}} 
+\mbox{\hyperlink{classUser}{User}} $\ast$ \mbox{\hyperlink{classGameProfile_a593ee1b205e56cf89a8a54d02cd61ecc}{get\+User}} ()
+\begin{DoxyCompactList}\small\item\em Returns the user associated with this Game Profile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Run\+Type $>$ }\\static \mbox{\hyperlink{classGameProfile}{Game\+Profile}} $\ast$ \mbox{\hyperlink{classGameProfile_aefd7f0630d476a7cadb1127cf2300f13}{build}} (const Q\+String \&game\+Base\+Path, \mbox{\hyperlink{classUser}{User}} $\ast$user)
+\begin{DoxyCompactList}\small\item\em Builds the game profile for the current user for a given game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameProfile_a6c164dd26feea017cc33c5efbdeeabe7}\label{classGameProfile_a6c164dd26feea017cc33c5efbdeeabe7}} 
+\index{GameProfile@{GameProfile}!addRun@{addRun}}
+\index{addRun@{addRun}!GameProfile@{GameProfile}}
+\doxysubsubsection{\texorpdfstring{addRun()}{addRun()}}
+{\footnotesize\ttfamily void Game\+Profile\+::add\+Run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBaseRun}{Base\+Run}} $\ast$}]{run }\end{DoxyParamCaption})}
+
+
+
+Inserts a run into the user\textquotesingle{}s profile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em run} & Pointer to the run that should be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameProfile_aefd7f0630d476a7cadb1127cf2300f13}\label{classGameProfile_aefd7f0630d476a7cadb1127cf2300f13}} 
+\index{GameProfile@{GameProfile}!build@{build}}
+\index{build@{build}!GameProfile@{GameProfile}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily template$<$typename Run\+Type $>$ \\
+static \mbox{\hyperlink{classGameProfile}{Game\+Profile}}$\ast$ Game\+Profile\+::build (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{game\+Base\+Path,  }\item[{\mbox{\hyperlink{classUser}{User}} $\ast$}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Builds the game profile for the current user for a given game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Run\+Type} & The type of \mbox{\hyperlink{classBaseRun}{Base\+Run}} that the profile should use. This should be a Run class that inherits from \mbox{\hyperlink{classBaseRun}{Base\+Run}}. \\
+\hline
+{\em game\+Base\+Path} & The path to where the specific game files are located. \\
+\hline
+{\em user} & Pointer to the user whose profile should be built. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/shared/\mbox{\hyperlink{gameprofile_8h}{gameprofile.\+h}}\item 
+/home/malek/projects/\+C-\/\+Cpp/\+Qt/repos/qamingframework/\+Qaming\+Framework/shared/\mbox{\hyperlink{gameprofile_8cpp}{gameprofile.\+cpp}}\end{DoxyCompactItemize}

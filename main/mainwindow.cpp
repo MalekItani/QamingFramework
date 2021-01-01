@@ -2,8 +2,16 @@
 #include <accounts/registeraccountwindow.h>
 #include <accounts/loginwindow.h>
 #include <accounts/user.h>
-
+#include <KillCovid-19/killcovid-19window.h>
+#include "Utils/Utils.h"
 #include <iostream>
+
+
+/**
+* \file mainwindow.h
+* \brief Implementation of the mainWindow.
+* \author Malek Itani
+*/
 
 mainWindow::mainWindow(QWidget *parent) : QWidget(parent){
     QSize windowSize = QSize(560, 600 );
@@ -49,6 +57,7 @@ void mainWindow::buildRequestLoginLayout(){
     requestLoginLayout->addWidget(registerButton);
 
     playAsGuestButton = new QPushButton("Play as guest");
+
     requestLoginLayout->addWidget(playAsGuestButton);
 
     requestLoginLayout->addItem(new QSpacerItem(1, 64));
@@ -108,7 +117,12 @@ void mainWindow::buildDisplayGamesLayout(){
     logoutButton = new QPushButton("Log out");
     displayGamesLayout->addWidget(logoutButton);
 
-    displayGamesLayout->addItem(new QSpacerItem(1, 64));
+    displayGamesLayout->addItem(new QSpacerItem(1, 16));
+
+    gameHistoryWidget = new GameHistoryWidget();
+    displayGamesLayout->addWidget(gameHistoryWidget);
+
+    displayGamesLayout->addItem(new QSpacerItem(1, 16));
 
     creditsLabel = new QLabel("A Gaming platform written in Qt by Malek Itani and Khalil Baydoun");
     creditsLabel->setAlignment(Qt::AlignCenter);
@@ -120,6 +134,8 @@ void mainWindow::buildDisplayGamesLayout(){
     QObject::connect(this, SIGNAL(updateUsernameLabel(const QString&)), usernameLabel, SLOT(setText(const QString&)));
     QObject::connect(this, SIGNAL(updateUserProfilePicture(const QPixmap&)), userProfilePicture, SLOT(setPixmap(const QPixmap&)));
     QObject::connect(logoutButton, SIGNAL(clicked(bool)), this, SLOT(executeLogout()));
+    QObject::connect(killCovidGameButton, SIGNAL(clicked(bool)), this, SLOT(StartKillCovidGame()));
+    QObject::connect(reversiGameButton, SIGNAL(clicked(bool)), this, SLOT(StartReversiGame()));
 }
 
 // ================================================================================================================================
@@ -145,10 +161,14 @@ void mainWindow::openLoginForm(){
 
 void mainWindow::updateLayoutWithUserInfo(User* user){
     if(user){
+        activeUser=user;
+
+        gameHistoryWidget->fill(activeUser);
+
         QString username = user->getUsername();
         emit updateUsernameLabel(username);
 
-        QPixmap pixmap("../QamingFramework/" + user->getProfilePicturePath());
+        QPixmap pixmap("../" + user->getProfilePicturePath());
         pixmap = pixmap.scaled(96, 96,Qt::KeepAspectRatio);
         userProfilePicture->setPixmap(pixmap);
         emit updateUserProfilePicture(pixmap);
@@ -168,6 +188,46 @@ void mainWindow::updateLayoutWithUserInfo(User* user){
     }
 }
 
+void mainWindow::StartKillCovidGame(){
+    KillCovidGameWindow= new KillCovid_19Window(activeUser);
+    KillCovidGameWindow->setWindowTitle("Kill Covid-19");
+    this->hide();
+    connect(KillCovidGameWindow, SIGNAL(windowClosed()), this, SLOT(onKillCovid19Finish()));
+    KillCovidGameWindow->show();
+}
+
+void mainWindow::StartReversiGame(){
+    ReversiGameWindow = new ReversiWindow(activeUser);
+    ReversiGameWindow->setWindowTitle("Reversi");
+    this->hide();
+    connect(ReversiGameWindow, SIGNAL(windowClosed()), this, SLOT(onReversiFinish()));
+    ReversiGameWindow->show();
+}
+
 void mainWindow::executeLogout(){
     emit swapLayout(0);
 }
+
+void mainWindow::onKillCovid19Finish(){
+    gameHistoryWidget->fill(activeUser);
+
+    if(KillCovidGameWindow!=nullptr){
+        KillCovidGameWindow->hide();
+        delete KillCovidGameWindow;
+    }
+
+    this->show();
+}
+
+void mainWindow::onReversiFinish(){
+    gameHistoryWidget->fill(activeUser);
+
+    if(ReversiGameWindow!=nullptr){
+        ReversiGameWindow->hide();
+        delete ReversiGameWindow;
+    }
+
+    this->show();
+}
+
+
